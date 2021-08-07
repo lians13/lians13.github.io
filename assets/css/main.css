@@ -98,11 +98,11 @@ header{
 #banner>.summary .introduce .synopsis h3{
     font-size: 20px;
 }
-#banner>.summary .introduce .resume{
+#banner>.summary .introduce #resume{
     width: 10em;height: 3.5em;
     display: flex;
 }
-#banner>.summary .introduce .resume a{
+#banner>.summary .introduce #resume a{
     width: 9.5em; height: 3.5em;
     line-height: 3.5em;
     font-size: 1.2em;
@@ -112,7 +112,7 @@ header{
     color: rgba(255,242,189,1);
     background: rgba(148,123,137,1);
 }
-#banner>.summary .introduce .resume a::after{
+#banner>.summary .introduce #resume a::after{
     content: ' »';
     position: relative;
     opacity: 0;
@@ -120,7 +120,7 @@ header{
     opacity: 0;
     transition: all 0.3s
 }
-#banner>.summary .introduce .resume a:hover:after{
+#banner>.summary .introduce #resume a:hover:after{
     opacity: 1;
     right: 0;
 }
@@ -198,7 +198,7 @@ header{
     flex-direction: column;
     width: 100%;height:10% ;
     color: rgba(78,14,46,1);
-    font-size: 36px;
+    font-size: 2.25em;
 }
 .content_text .title::after{
     content: '.';
@@ -213,6 +213,7 @@ header{
     display: flex;
     flex-direction: column;
     width: 100%;height:65%;
+    font-size: 1.1em;
 }
 .content_text .button{
     display: flex;
@@ -241,7 +242,7 @@ header{
     justify-content: space-around;align-items: center;
 }
 .content_img img{
-    max-width: 27em; height: auto;
+    max-width: 80%; height: auto;
 }
 footer{
     width: 100%; height: 8em;
@@ -282,18 +283,21 @@ footer>#footer .footer_contact a img{
     #banner>.summary .introduce {padding-left: 10%;width: 50%;}
     #banner>.selection , #wrapper>.content , #wrapper>.content_reverse { width: 100%;}
     .content_text {width: 43%;padding-left: 7%;}
+    .content_text .text{font-size: 1em;}
     .content_img {width: 50%;}    
-    .content_img  img{max-width: 100%;}
+    .content_img  img{max-width: 90%;}
     footer>#footer .footer_contact{width: 400px;}
 }
 @media screen and (max-width:768px){
     #header>#logo{width: 15%;padding-left: 1%;}
     #header>nav{font-size: 1.15em;}
     #header>nav ul li{width: 6em;}
-    #banner>.summary .introduce {padding-left: 0%;width: 60%;}
+    #banner>.summary .introduce {padding-left: 3%;width: 67%;}
+    #banner>.summary .intro {width: 30;}
     #banner>.selection div a{font-size: 24px;}
-    #wrapper>.content , #wrapper>.content_reverse{flex-direction: column-reverse; height: 70em; padding-bottom: 0;}
-    .content_text , .content_img  {width: 75%;padding-left: 0; padding-right: 0;padding-bottom: 1em;}
+    #wrapper{padding-top: 3em;}
+    #wrapper>.content , #wrapper>.content_reverse{flex-direction: column-reverse; height: auto; padding-bottom: 3em;}
+    .content_text , .content_img  {width: 75%; height: auto;padding-left: 0; padding-right: 0;padding-bottom: 1em;}
     .content_text .button{padding-left: 0;justify-content: center;}
     .content_img img {width: 100%;}
     footer{height: 12em;}
@@ -309,11 +313,12 @@ footer>#footer .footer_contact a img{
     #header>nav ul {width: 100%;}
     #header>nav ul li{float: inherit;width: 100%;}
     #header>nav ul li a{flex-direction: row;justify-content: center;height: 2.5em; line-height: 2.5em;box-shadow: 0 -1px rgba(78,14,46,0.5) inset; }
-    #banner>.summary .introduce .synopsis h2{font-size: 26px;}
-    #banner>.summary .introduce .synopsis h3{font-size: 18px;}
+    #banner>.summary .introduce {padding-left: 0;width: 80%;}
+    #banner>.summary .intro {width: 20;}
+    #banner>.summary .introduce .synopsis h2{font-size: 1.75em;}
+    #banner>.summary .introduce .synopsis h3{font-size: 1.05em;}
     #banner>.selection{height: 10%;}
-    #banner>.selection div a{font-size: 18px;}
-    #wrapper>.content , #wrapper>.content_reverse{ height: auto; padding-bottom: 2.5em;}
+    #banner>.selection div a{font-size: 1.2em;}
     .content_text , .content_img  {width: 85%; padding-bottom: 1em;}
 }
 @media screen and (max-width:414px){
@@ -321,5 +326,5 @@ footer>#footer .footer_contact a img{
     #banner>.summary{justify-content: center;}
     #banner>.summary .introduce .resume{padding-top: 1.5em;}
     #banner>.summary .intro {display: none;}
-    #banner>.selection div a{font-size: 14px;}
+    #banner>.selection div a{font-size: 1.1px;}
 }
