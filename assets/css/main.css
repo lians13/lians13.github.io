@@ -85,10 +85,10 @@ header{
 }
 #banner>.summary .introduce {
     padding-left: 20%;
-    width: 40%;height: 65%;
+    width: 40%;height: auto;
 }
 #banner>.summary .introduce .synopsis{
-    width: 100%;height: 80%;
+    width: 100%;height: auto;
     display: flex;
     flex-direction: column;
 }
