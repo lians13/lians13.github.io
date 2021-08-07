@@ -13,7 +13,8 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
     $('.content_text').css('height','auto');
     $('.content_img').css('width','100%');
     $('.title').css('font-size','3em');
-    $('.text').css('font-size','1.5em');
+    $('.text').css('font-size','0.95em');
+    $('.text').css('height','auto');
     $('.button').css('font-size','1em');
 
     $('h2').css('font-size','2.25em')
