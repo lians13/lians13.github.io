@@ -10,6 +10,7 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
     $('.selection').css('display','none');
     $('.content_text').css('padding','0');
     $('.content_text').css('width','80%');
+    $('.content_text').css('height','auto');
     $('.content_img').css('width','100%');
     $('.title').css('font-size','3em');
     $('.text').css('font-size','1.5em');
