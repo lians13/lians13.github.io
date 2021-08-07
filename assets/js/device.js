@@ -11,10 +11,10 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
     $('.content_text').css('padding','0');
     $('.content_text').css('width','80%');
     $('.content_img').css('width','100%');
-    $('.title').css('font-size','4.5em');
-    $('.text').css('font-size','2em');
-    $('.button').css('font-size','1.5em');
+    $('.title').css('font-size','3em');
+    $('.text').css('font-size','1.5em');
+    $('.button').css('font-size','1em');
 
-    $('h2').css('font-size','2.65em')
-    $('h3').css('font-size','1.65em')
+    $('h2').css('font-size','2.25em')
+    $('h3').css('font-size','1.1em')
 }else{}
