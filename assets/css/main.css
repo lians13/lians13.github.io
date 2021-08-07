@@ -1,6 +1,6 @@
 body{
     background: rgba(225,231,235,1);
-    overflow:auto;overflow-X:hidden;
+    overflow-y:auto;overflow-x:hidden;
     font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
 h4{padding: 0; margin: 0;}
@@ -80,6 +80,7 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;  
+    overflow:hidden;
     width: 1280px;height: 87%;
 }
 #banner>.summary .introduce {
@@ -130,7 +131,7 @@ header{
     border-radius: 5px;
     background: rgba(148,123,137,1);
 }
-#banner>.summary .intro .image_avatar img{
+#banner>.summary .intro img{
     max-width: 600px;
     transform: translate(-40%,0);
     filter: drop-shadow(7px -7px 10px rgba(255, 255, 255, 0.5))
@@ -291,8 +292,7 @@ footer>#footer .footer_contact a img{
     #header>nav ul li{width: 6em;}
     #banner>.summary .introduce {padding-left: 0%;width: 60%;}
     #banner>.selection div a{font-size: 24px;}
-    #wrapper>.content , #wrapper>.content_reverse{flex-direction: column-reverse; height: 70em;}
-    #wrapper>.content , #wrapper>.content_reverse { padding-bottom: 0;}
+    #wrapper>.content , #wrapper>.content_reverse{flex-direction: column-reverse; height: 70em; padding-bottom: 0;}
     .content_text , .content_img  {width: 75%;padding-left: 0; padding-right: 0;padding-bottom: 1em;}
     .content_text .button{padding-left: 0;justify-content: center;}
     .content_img img {width: 100%;}
@@ -313,5 +313,13 @@ footer>#footer .footer_contact a img{
     #banner>.summary .introduce .synopsis h3{font-size: 18px;}
     #banner>.selection{height: 10%;}
     #banner>.selection div a{font-size: 18px;}
+    #wrapper>.content , #wrapper>.content_reverse{ height: auto; padding-bottom: 2.5em;}
     .content_text , .content_img  {width: 85%; padding-bottom: 1em;}
+}
+@media screen and (max-width:414px){
+    #banner{height: 40em;}
+    #banner>.summary{justify-content: center;}
+    #banner>.summary .introduce .resume{padding-top: 1.5em;}
+    #banner>.summary .intro {display: none;}
+    #banner>.selection div a{font-size: 14px;}
 }
