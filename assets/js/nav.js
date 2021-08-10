@@ -1,13 +1,16 @@
 window.addEventListener('scroll', stick);
+window.addEventListener('resize',windowwidth=> console.log(window.innerWidth))
 const header = document.querySelector('header');
 const banner = document.querySelector('#banner');
 const nav = document.querySelector('nav');
 const logo = document.querySelector('.logo_table');
 
+confirm('寬'+window.innerWidth +'px')
+
 function stick (event) {
     const condition = header.offsetHeight;
 
-    if(nav.style.display == 'flex'){nav.style.display = 'none'}
+    if(nav.style.display == 'flex'){nav.style.display = ''}
 
     if(window.scrollY>= condition){
         header.style.position = 'fixed'; 
@@ -30,7 +33,7 @@ $('.nav_button').click(function(){
     
     if(window.innerWidth<=576){
         if(nav.style.display == 'flex'){
-            nav.style.display='none';  
+            nav.style.display='';  
             header.style.height= logo.offsetHeight+'px';  
         }else if(nav.style.display==''||nav.style.display=="none"){
             nav.style.display='flex';

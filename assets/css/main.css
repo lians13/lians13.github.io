@@ -13,14 +13,17 @@ header{
 }
 #header{
     width: 1280px;    height: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;justify-content: space-between;  
     align-items: center;
+    border:  solid 0.5px  red;
 }
 #header>.logo_table{
     height: 90%; width: auto;
     display: flex;
     align-items: center;justify-content: space-between;
+    border: solid 0.5px blue; 
 }
 #header>.logo_table .logo{
     height: 100%;width: auto;
@@ -28,6 +31,7 @@ header{
     display: flex;
     flex-direction: row;
     text-align: center;
+    border:  solid 0.5px black;
 }
 #header>.logo_table .logo img{
     height:100%; width: auto;
@@ -40,6 +44,7 @@ header{
     padding-right: 5%;
     display: none;
     align-items: center;justify-content: center;
+    border:  solid 0.5px green;
 }
 #header>.logo_table .nav_button img{
     height: 70%;
@@ -52,6 +57,7 @@ header{
     display: flex;
     align-items: center;justify-content: space-between;  
     font-size: 1.25em;
+    border:  solid 0.5px  orange;
 }
 #header>nav ul{
     list-style: none;
@@ -293,7 +299,7 @@ footer>#footer .footer_contact a img{
 }
 @media screen and (max-width:1024px){
     #header,#banner>.summary{ width: 100%;}
-    #header>nav{font-size: 1.2em;}
+    #header>nav{display: flex;font-size: 1.2em;}
     #header>nav ul li{width: 7em;}
     #banner>.summary .introduce {padding-left: 10%;width: 50%;}
     #banner>.selection , #wrapper>.content , #wrapper>.content_reverse { width: 100%;}
@@ -304,7 +310,7 @@ footer>#footer .footer_contact a img{
     footer>#footer .footer_contact{width: 400px;}
 }
 @media screen and (max-width:768px){
-    #header>nav{font-size: 1.15em;}
+    #header>nav{display: flex;font-size: 1.15em;}
     #header>nav ul li{width: 6em;}
     #banner>.summary .introduce {padding-left: 3%;width: 67%;}
     #banner>.summary .intro {width: 30;}
@@ -326,8 +332,7 @@ footer>#footer .footer_contact a img{
     #header>.logo_table{width: 100%; height: 88px;}
     #header>.logo_table .nav_button{display: flex;}
     #header>nav{width: 100%;height: auto;display:none;justify-content: center; padding-bottom: 1em;}
-    #header>nav ul {width: 100%;}
-    #header>nav ul li{float: inherit;width: 100%;}
+    #header>nav ul , #header>nav ul li{width: 100%;}
     #header>nav ul li a{flex-direction: row;justify-content: center;height: 2.5em; line-height: 2.5em;box-shadow: 0 -1px rgba(78,14,46,0.5) inset; }
     #header> .nav_button{display: flex;}
     #banner>.summary .introduce {padding-left: 0;width: 80%;}
