@@ -17,21 +17,18 @@ header{
     display: flex;
     align-items: center;justify-content: space-between;  
     align-items: center;
-    border:  solid 0.5px  red;
 }
 #header>.logo_table{
     height: 90%; width: auto;
     display: flex;
     align-items: center;justify-content: space-between;
-    border: solid 0.5px blue; 
 }
 #header>.logo_table .logo{
-    height: 100%;width: 88px;
+    height: 100%;width: auto;
     padding-left: 5%;
     display: flex;
     flex-direction: row;
     text-align: center;
-    border:  solid 0.5px black;
 }
 #header>.logo_table .logo img{
     height:100%; width: auto;
@@ -44,7 +41,6 @@ header{
     padding-right: 5%;
     display: none;
     align-items: center;justify-content: center;
-    border:  solid 0.5px green;
 }
 #header>.logo_table .nav_button img{
     height: 70%;
@@ -57,7 +53,6 @@ header{
     display: flex;
     align-items: center;justify-content: space-between;  
     font-size: 1.25em;
-    border:  solid 0.5px  orange;
 }
 #header>nav ul{
     list-style: none;

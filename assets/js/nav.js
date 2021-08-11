@@ -1,5 +1,5 @@
 window.addEventListener('scroll', stick);
-window.addEventListener('resize',windowwidth=> console.log(window.innerWidth))
+window.addEventListener('resize',windowwidth)
 const header = document.querySelector('header');
 const banner = document.querySelector('#banner');
 const nav = document.querySelector('nav');
@@ -26,6 +26,11 @@ function stick (event) {
         header.style.boxShadow = '0px 0px 0px rgba(52,44,52,0)';
         banner.style.paddingTop = 0;
         logo.style.height = 88+'px'; 
+    }
+}
+function windowwidth(event){
+    if(window.innerWidth>576){
+        header.style.height = logo.offsetHeight+'px';
     }
 }
 
