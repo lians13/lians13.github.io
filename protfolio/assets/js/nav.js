@@ -5,7 +5,7 @@ const banner = document.querySelector('#banner');
 const nav = document.querySelector('nav');
 const logo = document.querySelector('.logo_table');
 
-confirm('寬'+window.innerWidth +'px')
+/*confirm('寬'+window.innerWidth +'px')*/
 
 function stick (event) {
     const condition = header.offsetHeight;
