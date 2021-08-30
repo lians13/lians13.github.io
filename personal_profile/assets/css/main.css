@@ -481,6 +481,7 @@ footer>#footer .footer_contact a svg{
     #banner>.summary .introduce {padding-left: 3%;width: 67%;}
     #banner>.summary .intro {width: 30;}
     #banner>.selection div a{font-size: 1.5em;}
+    #wrapper>.select:hover{ box-shadow: 0 0 50px  rgba(148,123,137,0) inset;}
     #wrapper>.content {flex-direction: column; width: 90%;height: auto; padding: 2em 0;}
     #wrapper>.content .content_text , #wrapper>.content .content_img  {width: 85%; height: auto;padding-left: 0; padding-right: 0;padding-bottom: 1em;}
     #wrapper>.content .content_text {order:2 !important;} #wrapper>.content .content_img {order:1 !important;}
