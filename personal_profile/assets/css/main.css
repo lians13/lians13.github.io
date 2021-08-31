@@ -130,7 +130,7 @@ header{
 }
 #banner>.down{
     position: absolute;
-    padding: 15px;
+    padding: 40px;
     transition: 00.25s;
     animation:down 1.25s;
     animation-timing-function: ease-out;
