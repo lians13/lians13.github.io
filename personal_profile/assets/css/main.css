@@ -123,6 +123,7 @@ header{
     display: flex;
     justify-content: center;align-items: center;
     overflow:hidden;
+    background-color: #333;
 }
 #banner>.banner_bg .banner_img{ 
     filter:brightness(0.8) saturate(0.8) blur(3px);
@@ -130,7 +131,7 @@ header{
 }
 #banner>.down{
     position: absolute;
-    padding: 40px;
+    padding: 45px;
     transition: 00.25s;
     animation:down 1.25s;
     animation-timing-function: ease-out;
@@ -323,6 +324,7 @@ header{
 }
 #wrapper>.content .content_text .thumbnail img{
     width:auto;height:100%;
+    box-shadow: 3px 3px 5px 2px  rgba(78, 14, 46, 0.3);
 }
 #wrapper>.content .content_img{
     width: 50%; height: 100%;
@@ -485,7 +487,7 @@ footer>#footer .footer_contact a svg{
     #banner>.selection , #wrapper>.content { width: 100%;}
     #wrapper>.content .content_text {width: 43%;padding-left: 7%;}
     #wrapper>.content .content_text .text{font-size: 1.1em;}
-    #wrapper>.content .content_text .thumbnail{max-width: 90%;}
+    #wrapper>.content .content_text .thumbnail{max-width: 100%;}
     #wrapper>.content .content_text .thumbnail img{
         width:90%;height:auto;
     }
@@ -525,6 +527,7 @@ footer>#footer .footer_contact a svg{
     #banner>.selection{height: 12%;}
     #wrapper>.content .content_text {width: 80%; padding-bottom: 1em;}
     #wrapper>.content .content_img  {width: 100%; padding-bottom: 1em;}
+    #wrapper>.content .content_text .thumbnail img{width: 115%; height: auto;}
     .carte , .carte:hover{transform: scale(0.8,0.8);}
     footer>#footer .footer_copyright ,  footer>#footer .footer_contact{width: 90%;}
 }
