@@ -80,6 +80,7 @@ nav>.contact_btn:hover{
 }
 .sort>.title p{
     width: 75px;    height: 2em;
+    font-size: 1.15em;
     line-height: 2em;
     text-align: center;
     margin: 0;
