@@ -42,6 +42,7 @@ nav>.detail_btn:hover{
 }
 nav>.contact_btn{
     width: 95px;    height: 80%;
+    min-height: 38px;
     display: flex;
     align-items: center; justify-content: center;
     color: rgba(255, 255, 255, 1);
@@ -104,6 +105,7 @@ nav>.contact_btn:hover{
     align-items: center;   
     margin: 0 0 0.5em 0;
     border-radius: 10px;
+    text-decoration: none;
     background-color: transparent;
     transition: 0.15s;
 }
@@ -116,6 +118,7 @@ nav>.contact_btn:hover{
 }
 .box>.item p{
     width: 60px;    height: 2em;
+    color: black;
     text-align: center;
     line-height: 2em;
     margin:0;
@@ -164,7 +167,7 @@ nav>.contact_btn:hover{
     box-shadow: 0 1.5px 5px  rgb(175, 175, 175);
 }
 .content>.searchbar .bar{
-    width: 95%;    height:90%;
+    width: 90%;    height:90%;
     display: flex;
     flex-direction: row;
     align-items: center; justify-content: left;
