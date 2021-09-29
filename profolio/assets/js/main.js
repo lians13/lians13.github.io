@@ -54,6 +54,14 @@ function flashing(){
 }
 flashing();
 
+window.onload = function(){
+    setplace();
+    $(".transparent").each(function(){
+        $(this).removeClass("transparent");
+    })
+    $('.load').fadeOut(250)
+};
+
 $('.detail_btn').click(function (e) { 
     e.stopPropagation();
     if($('.menu').css('display') == 'block'){
