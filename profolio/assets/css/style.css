@@ -58,6 +58,12 @@ header>.optionbar .bar .option:hover{
     display: flex;
     flex-direction: row;
 }
+.load{
+    position: fixed;
+    width: 100%;    height: 100%;
+    display: flex;  flex-direction: column;
+    justify-content: center;    align-items: center;
+}
 .portfolio{
     display: flex;
     flex-direction: row;

@@ -121,12 +121,14 @@ $('.work').click(function (e) {
     $('.info_text_pos').css({'width': $('.info_img').innerWidth()-30 , 'top': $('.info_img').offset().top+$('.info_img').innerHeight()-window.scrollY});
 });
 
-$(document).ready(function () {
+//$(document).ready(function () {
+window.onload = function(){
     setplace();
     $(".transparent").each(function(){
         $(this).removeClass("transparent");
     })
-});
+    $('.load').fadeOut(250)
+};
 $('.float_info').click(function (e) {
     if($('.float_info').css('display') == 'block' ||$('.float_info').css('display') == 'flex'){
         $('.float_info').fadeOut(100);
