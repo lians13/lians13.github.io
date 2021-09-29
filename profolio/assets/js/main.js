@@ -112,11 +112,9 @@ $('.work').click(function (e) {
         }
     } 
     
-    var img_id ='#'+ $(this).attr('id')+'_img';
     var img_gif_id ='#'+ $(this).attr('id')+'_gif_img';
     var text_id ='#'+ $(this).attr('id')+'_text';
 
-    $('.info_img').html($(img_id).html());
     $('.info_img').html($(img_gif_id).html());
 
     if($('.info_img').children('.work_img').innerHeight()>$('.info_img').children('.work_img').innerWidth()){
