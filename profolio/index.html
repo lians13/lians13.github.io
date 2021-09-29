@@ -9,11 +9,14 @@
         <!--
         <link rel="Shortcut Icon" type="image/x-icon" href="./assets/images/ico.ico" />
         -->
-        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/index_style.css" />
         
+        <!-- jquery-3.6.0.min.js -->        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
+        <!-- clipboard.js v1.7.1 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
         <style>
 
         </style>
@@ -23,11 +26,11 @@
         <section class="wrap">
             <header>
                 <nav>
-                    <a class="nav_btn" href="">
+                    <a class="nav_btn" href="./experience.html">
                         Resume
                     </a>
-                    <a class="nav_btn" href="#">
-                        Profolio
+                    <a class="nav_btn" href="./portfolio.html">
+                        Portfolio
                     </a>
                     <div class="detail_btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid-dots" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="#5f6368" fill="#5f6368" stroke-linecap="round" stroke-linejoin="round">
@@ -43,11 +46,11 @@
                             <circle cx="19" cy="19" r="1" />
                         </svg>
                     </div>
-                    <a class="contact_btn" href="#">
+                    <button class="contact_btn" data-clipboard-target="#mail" id="copy">
                         Contact
-                    </a>
+                    </button>
                 </nav>
-                <div class="list">
+                <div class="menu">
                     <div class="sort">
                         <div class="title">
                             <p>Skill</p>
@@ -80,7 +83,7 @@
                             </div>
                             <div class="item">
                                 <img src="./assets/images/skills/photoshop.png">
-                                <p>PhotoShop</p>
+                                <p>Photoshop</p>
                             </div>
                             <div class="item">
                                 <img src="./assets/images/skills/illustrator.png">
@@ -133,11 +136,11 @@
                     </svg>
                 </div>
                 <div class="searchbtns">
-                    <a class="search_btn">
+                    <a class="search_btn" href="./experience.html">
                         Resume
                     </a>
-                    <a class="search_btn">
-                        Profolio
+                    <a class="search_btn" href="./portfolio.html">
+                        Portfolio
                     </a>
                 </div>
             </section>
@@ -148,11 +151,12 @@
                 <div class="line"></div>
                 <div class="region">
                     <div class="links">
-                        <a href="#">Skill</a>
-                        <a href="#">Exprence</a>
-                        <a href="#">Contact</a>
+                        <a href="./skill.html">Skill</a>
+                        <a href="./experience.html">Exprence</a>
+                        <a class="contact_btn" data-clipboard-target="#mail" id="copy">Contact</a>
                     </div>
                     <div class="copyright">© COPYRIGHTS FOLIO. ALL RIGHTS RESERVED.</div>
+                    <input type="text" id="mail" value="a0983588286@gmail.com" style="position: fixed; top:-50px;opacity: 0;">
                 </div>
             </footer>
         </section>     
