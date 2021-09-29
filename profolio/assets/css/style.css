@@ -236,6 +236,7 @@ header>.optionbar .bar .option:hover{
 }
 @media screen and (max-width:414px){
     header>.top .searchbar .bar{width: 65%;}
+    header>.optionbar .bar .option{width: auto; font-size: 1em; padding: 0 5px 0 3px; margin: 0;}
     .portfolio>.float_info .info_text{width: 80VW;}
-    .note{min-width: 90vw;}
+    .note{min-width: 90vw; max-width: 90vw;}
 }
