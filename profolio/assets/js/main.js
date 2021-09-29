@@ -79,7 +79,7 @@ $(document).click(function(){
 var navheight = $('header').offset().top;
 $(window).scroll(function(){
     if(window.scrollY>navheight){
-        $('header').css({'position': 'fixed', 'background': 'white' , 'boxShadow':'0px 3px 5px rgba(52,44,52,0.1) inset'});
+        $('header').css({'position': 'fixed','boxShadow':'0px 3px 5px rgba(52,44,52,0.1) inset'});
         $('.pack').css({'padding-top':$('header').innerHeight()});
         $('.profolio').css({'padding-top':$('header').innerHeight()});
     }else{
