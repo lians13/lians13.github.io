@@ -106,11 +106,13 @@ $('.work').click(function (e) {
     } 
     
     var img_id ='#'+ $(this).attr('id')+'_img';
+    var img_gif_id ='#'+ $(this).attr('id')+'_gif_img';
     var text_id ='#'+ $(this).attr('id')+'_text';
 
     $('.info_img').html($(img_id).html());
+    $('.info_img').html($(img_gif_id).html());
 
-    if($(img_id).innerHeight()>$(img_id).innerWidth()){
+    if($('.info_img').children('.work_img').innerHeight()>$('.info_img').children('.work_img').innerWidth()){
         $('.info_img').children('.work_img').css({'width':'auto','height':$('.info_img').height()});
     }else{
         $('.info_img').children('.work_img').css({'height':'auto','width':$('.info').width()-30});
@@ -121,14 +123,6 @@ $('.work').click(function (e) {
     $('.info_text_pos').css({'width': $('.info_img').innerWidth()-30 , 'top': $('.info_img').offset().top+$('.info_img').innerHeight()-window.scrollY});
 });
 
-//$(document).ready(function () {
-window.onload = function(){
-    setplace();
-    $(".transparent").each(function(){
-        $(this).removeClass("transparent");
-    })
-    $('.load').fadeOut(250)
-};
 $('.float_info').click(function (e) {
     if($('.float_info').css('display') == 'block' ||$('.float_info').css('display') == 'flex'){
         $('.float_info').fadeOut(100);

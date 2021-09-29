@@ -108,12 +108,14 @@ header>.optionbar .bar .option:hover{
     justify-content: center;align-items: center;
     overflow:  hidden;
 }
+.portfolio>.info .info_img_pos{
+    top:134px;
+}
 .portfolio>.info .info_img img{
     margin: 0 15px;
 }
 .portfolio>.info .info_text{
     position:fixed;
-    height: 500px;
     padding: 0 15px;
 }
 .portfolio>.float_info{

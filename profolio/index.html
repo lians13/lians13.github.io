@@ -164,5 +164,25 @@
         </section>     
 
     </body>
+
     <script src="assets/js/main.js"></script>
+    
+    <div class="hidden">
+        <script type="text/javascript">
+                var images = new Array()
+                function preload() {
+                    for (i = 0; i < preload.arguments.length; i++) {
+                        images[i] = new Image()
+                        images[i].src = preload.arguments[i]
+                    }
+                }
+                preload(
+                    "https://i.imgur.com/ChJg5R6.gif",
+                    "https://i.imgur.com/PG56mZw.gif",
+                    "https://i.imgur.com/Zkk0qBY.gif",
+                    "https://i.imgur.com/RLjNFgM.gif",
+                    "https://i.imgur.com/a5IQ1RS.gif"
+                )
+        </script>
+    </div>
 </html>
