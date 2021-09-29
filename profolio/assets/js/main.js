@@ -55,11 +55,10 @@ function flashing(){
 flashing();
 
 window.onload = function(){
-    setplace();
-    $(".transparent").each(function(){
-        $(this).removeClass("transparent");
-    })
-    $('.load').fadeOut(250)
+    $('.load').fadeOut(150)
+    setTimeout(() =>{
+        setplace();
+    }, 200);
 };
 
 $('.detail_btn').click(function (e) { 
