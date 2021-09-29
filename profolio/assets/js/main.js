@@ -54,13 +54,6 @@ function flashing(){
 }
 flashing();
 
-window.onload = function(){
-    $('.load').fadeOut(150)
-    setTimeout(() =>{
-        setplace();
-    }, 200);
-};
-
 $('.detail_btn').click(function (e) { 
     e.stopPropagation();
     if($('.menu').css('display') == 'block'){
@@ -96,7 +89,6 @@ $(window).scroll(function(){
     }
 });
 
-setplace();
 $(window).resize(function () { 
     setplace();
 });
