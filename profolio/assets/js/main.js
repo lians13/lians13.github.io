@@ -139,7 +139,7 @@ function setplace(){
     $(".work").each(function(index){
 
         var y = 0
-        if(height_offest == 0){y= $('.preview').offset().top}
+        if(height_offest == 0){y=$('header').innerHeight()}
         else{y = work_height[index-height_offest]}
 
         $(this).css({'position': 'absolute' , 'left': left_width , 'top': y+15})
