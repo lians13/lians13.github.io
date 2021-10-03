@@ -286,10 +286,6 @@
                     </div>
                     
                 </div>
-                <div class="info">
-                   <div class="info_img info_img_pos"></div>
-                   <div class="info_text info_text_pos"></div>
-                </div>
                 <div class="float_info">
                     <div class="info_img"></div>
                     <div class="info_text"></div>
@@ -317,6 +313,9 @@
         <script type="text/javascript">
             window.onload=function(){
                 setplace();
+                setTimeout(() => {
+                    setplace();
+                }, 50);
             }
         </script>
     </body>

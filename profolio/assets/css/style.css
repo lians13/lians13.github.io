@@ -3,7 +3,7 @@ body{
 }
 h4{margin: 0.75em 0;}
 header{
-    width: 100vw;   min-height: 130px;
+    width: 100%;   min-height: 130px;
     z-index: 10;
     flex-direction: column;
     justify-content:center;
@@ -94,30 +94,6 @@ header>.optionbar .bar .option:hover{
 .portfolio>.preview .work .work_text{
    display: none; 
 }
-.portfolio>.info{
-    min-width: 425px;   max-width: 50vw;
-    height: auto; 
-    flex-grow: 1;
-    display: none;
-    background-color: rgb(25, 25, 25);
-}
-.portfolio>.info .info_img{
-    position:fixed;
-    width:auto; height: 300px;
-    display: flex;
-    justify-content: center;align-items: center;
-    overflow:  hidden;
-}
-.portfolio>.info .info_img_pos{
-    top:134px;
-}
-.portfolio>.info .info_img img{
-    margin: 0 15px;
-}
-.portfolio>.info .info_text{
-    position:fixed;
-    padding: 0 15px;
-}
 .portfolio>.float_info{
     position: fixed;
     top: 0; left: 0;    z-index: 15;
@@ -126,17 +102,24 @@ header>.optionbar .bar .option:hover{
     flex-direction: column;
     align-items: center;  justify-content: center;
     background-color: rgba(25, 25, 25, 0.75);
-    opacity: 0;
+}
+.portfolio>.float_info .info_img{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+.portfolio>.float_info .info_img img{
+    width: 50vw;    max-width: 720px;
 }
 .portfolio>.float_info .info_text{
-    width: 50vw;    
+    width: 50vw;     max-width: 720px;
     height: 450px;  max-height: 50vh;
     margin-top: 15px;
     padding: 20px;
     border-radius: 3px;
     background-color: rgba(25, 25, 25, 1);
 }
-.info_text>.work_name{
+.portfolio>.float_info .info_text>.work_name{
     width: auto;    height: 2em;
     display:flex;
     justify-content: space-between;
@@ -144,7 +127,7 @@ header>.optionbar .bar .option:hover{
     font-size: 1.25em;  line-height: 2em;
     color: white;
 }
-.info_text>.work_name .work_link{
+.portfolio>.float_info .info_text>.work_name .work_link{
     width: 100px;    height: 2em;
     font-size: 1em;   text-align: center;   text-decoration: none;
     border-radius: 25px;
@@ -152,10 +135,10 @@ header>.optionbar .bar .option:hover{
     background-color: rgba(26, 115, 232, 1);
     transform: scale(0.85);
 }
-.info_text>.work_name .work_link:hover{
+.portfolio>.float_info .info_text>.work_name .work_link:hover{
     background-color: rgb(43, 125, 233);
 }
-.info_text>.work_describe{
+.portfolio>.float_info .info_text>.work_describe{
     width: auto;    height: auto;
     padding: 15px 25px 0 25px;
     font-size: 1em;  line-height: 2em;
@@ -233,20 +216,19 @@ header>.optionbar .bar .option:hover{
 @media screen and (max-width:768px){
     header>.optionbar .bar{width: 100%; padding-left: 0;justify-content: center; }
     .pack{flex-direction: column-reverse;   align-items: center;}
-    .portfolio>.info{position: fixed;}
-    .portfolio>.info .info_img , .portfolio>.info .info_text{display: none;}
-    .portfolio>.float_info{opacity: 1;}
     .container{margin: 1.5em 0 0 0;}
     .data>.detail{width: 95%; margin: 1.5em 2.5%;}
     .note{min-width: 400px;margin: 2.5em 0 0 0;}
 }
 @media screen and (max-width:576px){
     header>.top .logo_img{ padding-right: 0;} 
-    .portfolio>.float_info .info_text{width: 60VW;}
+    .portfolio>.float_info .info_text , .portfolio>.float_info .info_img{width: 60VW;}
+    .portfolio>.float_info .info_img img{width: 60VW;}
 }
 @media screen and (max-width:414px){
     header>.top .searchbar .bar{width: 65%;}
     header>.optionbar .bar .option{width: auto; font-size: 1em; padding: 0 5px 0 3px; margin: 0;}
-    .portfolio>.float_info .info_text{width: 80VW;}
+    .portfolio>.float_info .info_text , .portfolio>.float_info .info_img{width: 80VW;}
+    .portfolio>.float_info .info_img img{width: 80VW;}
     .note{min-width: 90vw; max-width: 90vw;}
 }
