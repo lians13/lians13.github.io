@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Crash</title>
+        <link rel="Shortcut Icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="">
+
+        <meta name="description" content="The cool bumper car game!!!">
+        <meta property="og:url" content="">
+        <meta property="og:type" content="">
+        <meta property="og:title" content="Crash">
+        <meta property="og:site_name" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta name="twitter:card" content="">
+        <meta name="twitter:image" content="">
+
+        <link rel="preload" as="script" href="">
+        <link rel="preload" as="style" href="">
+
+        <!-- jquery-3.6.0.min.js -->        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/Ball_Beat_Awasome.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&display=swap" rel="stylesheet">
+
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <main class="cc">
+            <div class="main_video cc">
+                <video src="./assets/video/video.mov" type="video/mov" muted="" autoplay="" loop="" playsinline=""></video>
+            </div>
+            <div class="frame cc">
+                <div class="main_circle cc">
+                    <h1>C R A S H</h1>
+                    <h2>bumper car <span style="color: brown;">X</span> food truck</h2>
+                </div>
+            </div>
+            <div class="triangle">
+                <div class="triangle_lt"></div>
+                <div class="triangle_br"></div>
+            </div>
+        </main>
+        <header class="cc">
+            <nav>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#what">What !</a></li>
+                    <li><a href="#so">So?</a></li>
+                    <li><a href="#allright">All right...</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="profile" id="what">
+            <div class="cc">
+                <h3 style="padding: 0;font-size: 3.5em; color: rgb(222, 222, 222); text-align: center;">
+                    What in here !!!<br>
+                    <span style="font-size: 0.6em;">we can...</span>
+                </h3>
+            </div>
+            <div class="content">
+                <div class="name_space jc_start">
+                    <div class="name b_radius_r">
+                        <img src="./assets/images/car.png">
+                        <h4>Chasing for your hot dog</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content" >
+                <div class="name_space jc_end">
+                    <div class="name b_radius_l jc_end">
+                        <img src="./assets/images/tree.png">
+                        <h4>Bump the tree away</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content">
+                <div class="name_space jc_start">
+                    <div class="name b_radius_r">
+                        <img src="./assets/images/man.png">
+                        <h4>Don't forget your money</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content" >
+                <div class="name_space jc_end">
+                    <div class="name b_radius_l jc_end">
+                        <img src="./assets/images/hot_dog_car.png">
+                        <h4>And it just $.2.99</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div style="
+            position: absolute;
+            width: 0;   height: 0;
+            border-style: solid;
+            border-width: 150px 0 0 100vw;
+            border-color: transparent transparent transparent rgb(45,95,160);">
+            </div>
+        </div>
+        <div  class="profile" id="so">
+            <div class="cc">
+                <h3 style="padding: 0;font-size: 3.5em; color: rgb(222, 222, 222); text-align: center; transform: rotate(-10deg);">
+                    So ?<br>
+                    <span style="font-size: 0.6em;">it's that all ?</span>
+                </h3>
+            </div>
+            <div class="cc" style="margin: 175px 0;  transform: rotate(90deg);">
+                <div class="la-ball-beat la-2x" style="display: flex;">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="la-ball-beat la-2x" style="display: flex; margin-left: 25px">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="cc" style="padding-top: 3em; color: rgb(222, 222, 222); font-size: 1.25em;">
+                yes...
+            </div>
+            <div style="
+            position: absolute;
+            width: 0;height: 0;
+            border-style: solid;
+            border-width: 0 0 150px 100vw;
+            border-color: transparent transparent rgb(145,145,145) transparent;">
+            </div>
+        </div>
+        <div  class="profile" id="allright">
+            <div class="cc">
+                <h3 style="padding: 0;font-size: 3.5em; color: rgb(222, 222, 222); text-align: center;transform: rotate(10deg);">
+                    All right...<br>
+                    <span style="font-size: 0.6em;">where can I get it?</span>
+                </h3>
+            </div>
+            <div class="cc">
+                <div class="cc" style="width:1024px; max-width: 90vw; min-height: 650px;  margin-top: 5em; background-color: rgba(222, 222, 222,0.9); border-radius: 15px;">
+                    <span style="font-size: 2em;">coming soon ...</span>
+                </div>
+            </div>
+        </div>
+        <footer class="cc">
+            <p style="font-size: 1.5em;">@ 2020 Crash Design</p>
+        </footer>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
