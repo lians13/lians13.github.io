@@ -3,7 +3,6 @@ body{
     margin: 0;  padding: 0; border: 0;
     font-size: 13px;    letter-spacing: 0.35em;
     font-family: 'Indie Flower', cursive ,"Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
-    background-color: rgb(255, 255, 255);
 }
 main{
     width: 100%;    
@@ -23,19 +22,24 @@ main>.main_video video{
     filter:brightness(0.75) saturate(1) blur(3px);
 }
 main>.frame{
+    z-index: 5;
     width: 100%;    
     height: 95vh;  min-height: 670px;
     margin: 0 2.5vw;
-    z-index: 5;
-    border: solid 1px rgb(255, 255, 255);
-    border-radius:1px;
+    transform: rotate(-1.5deg);
+    border: solid  rgb(255, 255, 255);
+    border-width: 1px 0.5px 1.5px 0.7px;
+    border-radius: 99% 1% 99% 0.7% / 0.8% 99% 0.5% 99%;
 }
 main>.frame .main_circle{
     width: 450px;   max-width: 80vw;
     height: 450px;  max-height: 80vw;
     flex-direction: column;
+    transform: rotate(5.5deg);
     color: rgb(47, 47, 49);
-    border-radius: 100%;
+    border:solid rgb(47, 47, 49);
+    border-width: 3px 1.5px 2px 0.8px;
+    border-radius: 97% 70% 75% 80% / 65% 82% 68% 75%;
     background-color: rgb(222, 222, 222);
 }
 main>.frame .main_circle h1{ 
@@ -55,16 +59,16 @@ main>.triangle{
     justify-content: space-between;
 }
 main>.triangle .triangle_lt{
-    z-index: 7;
     width: 0;   height: 0;
+    transform: rotate(1.5deg) translate(1vw,0);
     border-style: solid;
     border-width: 200px 350px 0 0;
     border-color: rgb(80, 80, 100) transparent transparent transparent;
     filter: drop-shadow(0 10px 0.75rem black);
 }
 main>.triangle .triangle_br{
-    z-index: 7;
     width: 0;   height: 0;
+    transform: rotate(1.5deg) translate(-1vw,5px);
     align-self: end;
     border-style: solid;
     border-width: 0 0 200px 350px;
@@ -89,6 +93,8 @@ header>nav ul li a{
 }
 .profile{
     width: auto;    height: auto;
+    display: flex;  flex-direction: column;
+    align-items: center;
     padding:5em 0 150px 0;
     overflow: hidden;
 }
@@ -96,16 +102,22 @@ header>nav ul li a{
     background-color: rgb(80, 80, 100);
 }
 #so{
-    background-color: rgb(45, 95, 160)
+    background-color: rgb(45, 95, 160);
 }
 #allright{
     background-color: rgb(145, 145, 145)
 }
+.profile>.title{
+    font-size: 3.5em;
+    color: rgb(222, 222, 222); text-align: center;
+    padding: 0;
+}
 .content{
-    padding: 7em 0 6em 0;
+    width: 98%;   max-width: 1920px;
 }
 .name_space{
-    width: 100vw;    height: 20em;
+    width: 100%;    height: 20em;
+    padding: 7.5em 0 7.5em 0;
     display: flex;
 }
 .jc_start{ justify-content: start;}
@@ -114,16 +126,20 @@ header>nav ul li a{
     width: 1024px;    height: 12em;
     display: flex;
     align-items: center;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(255, 255, 235);
 }
 .b_radius_r{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 125px;
+    border: solid black;
+    border-width: 2px 1px 2px 3px;
+    border-radius: 95% 4% 83% 0.5% / 2% 90% 7% 70%;
+    transform: rotate(1deg);
     padding: 4em 0 4em 15vw;
 }
 .b_radius_l{
-    border-top-left-radius: 125px;
-    border-bottom-left-radius: 25px;
+    border: solid black;
+    border-width: 2px 3px 0.5px 3px;
+    border-radius: 90% 1% 80% 3% / 5% 99% 10% 97%;
+    transform: rotate(-1deg);
     padding: 4em 15vw 4em 0;
     flex-direction: row-reverse;
 }
@@ -139,6 +155,59 @@ header>nav ul li a{
     display: flex;
     justify-content: center;    align-items: center;
 }
+.hand_paint_border{
+    border: solid black;
+    border-width: 1px 7px 2px 5px;
+    border-radius: 90% 3% 83% 5% / 5% 94% 7% 95%;
+    transform: rotate(2deg);
+}
+.hand_paint_border_content{
+    transform: rotate(-2deg);
+}
+.info{
+    width:1280px;
+    max-width: 90vw;    min-height: 600px;
+    flex-direction: column;
+    margin-top: 5em; 
+    background-color: rgb(222, 222, 222);
+}
+.info>dl{
+    width: 600px; max-width: 70vw;
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5em;
+    transform: rotate(-2deg);
+    margin: 0.25em 0;
+}
+.info>dl dt{
+   width: 6em;
+}
+.info>.info_btns{
+    width: 800px; max-width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;    flex-wrap: wrap;
+    justify-content: center;
+    padding: 4.5em 0;
+}
+.info>.info_btns .btn{
+    width: 12.5em; height: 4.5em;
+    border-width: 1.2px 0.5px 1.3px 0.8px;
+    margin: 0 1.5em;
+}
+.info>.info_btns .btn a{
+    width: 100%;    height: 100%;
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    transition: 0.25s;
+}
+.info>.info_btns .btn a:hover{
+    color: white;
+    background-color: black;
+}
+
 footer{
     width: auto;    height: 100px;
     color: rgb(222, 222, 222);
@@ -154,6 +223,7 @@ footer{
     .name {padding-left: 5vw;}
     .b_radius_r{border-top-right-radius: 12.5px; border-bottom-right-radius: 62.5px;}
     .b_radius_l{border-top-left-radius: 62.5px; border-bottom-left-radius: 12.5px;}
+    .info>dl{flex-direction: column;}
 }
 @media screen and (max-width:414px){
     .name {padding-left: 1em;}
