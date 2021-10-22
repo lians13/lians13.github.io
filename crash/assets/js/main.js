@@ -4,10 +4,10 @@ const header_height = $('header').offset().top;
 $(window).scroll(function(){
     if(window.scrollY>header_height){
         $('header').css({'position': 'fixed' ,'top': 0 ,'background-color':'rgba(47,47,49,0.95)'});
-        $('.profile').css({'padding-top':$('header').innerHeight()});
+        $('#what').css({'margin-top':$('header').innerHeight()});
     }else{
         $('header').removeAttr('style');
-        $('.profile').removeAttr('style');
+        $('#what').removeAttr('style');
     }
 });
 
@@ -27,12 +27,12 @@ $(window).scroll(function(){
     }else if(window.scrollY>$('#so').offset().top){
         $('body').css('background-color','rgb(45, 95, 160)');
         $('body').css('background-image','url(./assets/images/bg_gray.png)');
-    }else if(window.scrollY>$('#what').offset().top){
+    }else if(window.scrollY>$('#what').offset().top-75){
         $('body').css('background-color','rgb(80, 80, 100)');
         $('body').css('background-image','url(./assets/images/bg_black.png)');
     }else if(window.scrollY>$('main').offset().top){
         $('body').css('background-color','rgb(47, 47, 49)');
-        $('body').css('background-image','url(./assets/images/bg_gray.png)');
+        $('body').css('background-image','');
     }
 });
 

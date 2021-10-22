@@ -4,7 +4,7 @@ body{
     font-size: 13px;    letter-spacing: 0.35em;
     font-family: 'Indie Flower', cursive ,"Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
     background-color: rgb(47, 47, 49);
-    background-image: url(../images/bg_gray.png);
+    
     transition: 0.15s;
 }
 main{
@@ -83,8 +83,7 @@ header{
     background-color: rgba(47, 47, 49,0.9);
 }
 header>nav ul li{
-    width: 15em;    max-width: 25vw;
-    padding: 0 1em;
+    width: 15em;    max-width: 30vw;
     float: left;
     text-align: center;
 }
@@ -97,20 +96,19 @@ header>nav ul li a{
     width: auto;    height: auto;
     display: flex;  flex-direction: column;
     align-items: center;
-    padding:10.5em 0 5em 0;
+    padding:5em 0;
     overflow: hidden;
 }
 .profile>.title{
     font-size: 3.5em;
     color: rgb(222, 222, 222); text-align: center;
     padding: 1.5em 0 0 0;
-    filter: drop-shadow(0 0 5px black);
 }
 .content{
     width: 98%;   max-width: 1920px;
 }
 .name_space{
-    width: 100%;    height: 20em;
+    width: 100%;    height: auto;
     padding:2.5em 0;
     display: flex;
 }
@@ -135,13 +133,13 @@ header>nav ul li a{
     border: solid black;
     border-width: 2px 1px 2px 3px;
     border-radius: 95% 4% 83% 0.5% / 2% 90% 7% 70%;
-    padding: 4em 0 4em 15vw;
+    /*padding: 4em 0 4em 15vw;*/
 }
 .b_radius_l{
     border: solid black;
     border-width: 2px 3px 0.5px 3px;
     border-radius: 90% 1% 80% 3% / 5% 99% 10% 97%;
-    padding: 4em 15vw 4em 0;
+    /*padding: 4em 15vw 4em 0;*/
     flex-direction: row-reverse;
 }
 .name img{
@@ -151,10 +149,6 @@ header>nav ul li a{
 .name h4{
     font-size: 2.25em;
     padding:0 2em;
-}
-.cc{
-    display: flex;
-    justify-content: center;    align-items: center;
 }
 .hand_paint_border{
     border: solid black;
@@ -215,6 +209,14 @@ footer{
     background-color: rgb(47, 47, 49);
 }
 
+.cc{
+    display: flex;
+    justify-content: center;    align-items: center;
+}
+.shadow{
+    filter: drop-shadow(3px 3px 1px black);
+}
+
 @media screen and (max-width:768px){
     body {font-size: 12px;}
     .name {padding-left: 10vw;}
@@ -222,11 +224,10 @@ footer{
 @media screen and (max-width:576px){
     body {font-size: 10px;}
     .name {padding-left: 5vw;}
-    .b_radius_r{border-top-right-radius: 12.5px; border-bottom-right-radius: 62.5px;}
-    .b_radius_l{border-top-left-radius: 62.5px; border-bottom-left-radius: 12.5px;}
+    
     .info>dl{flex-direction: column;}
 }
 @media screen and (max-width:414px){
     .name {padding-left: 1em;}
-    .b_radius_r, .b_radius_l{border-radius: 25px; border-bottom-left-radius: 62.5px;}
+
 }
