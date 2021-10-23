@@ -71,7 +71,7 @@ main>.triangle .triangle_lt{
 main>.triangle .triangle_br{
     width: 0;   height: 0;
     transform: rotate(1.5deg) translate(-1vw,5px);
-    align-self: end;
+    align-self: flex-end;
     border-style: solid;
     border-width: 0 0 200px 350px;
     border-color: transparent transparent rgb(80, 80, 100) transparent;
@@ -96,8 +96,11 @@ header>nav ul li a{
     width: auto;    height: auto;
     display: flex;  flex-direction: column;
     align-items: center;
-    padding:5em 0;
+    padding:1.5em 0;
     overflow: hidden;
+}
+#what{
+    background: linear-gradient(180deg,rgb(30, 30, 40), rgba(80,80,100,0));
 }
 .profile>.title{
     font-size: 3.5em;
@@ -105,15 +108,15 @@ header>nav ul li a{
     padding: 1.5em 0 0 0;
 }
 .content{
-    width: 98%;   max-width: 1920px;
+    width: 99%;   max-width: 1500px;
 }
 .name_space{
     width: 100%;    height: auto;
     padding:2.5em 0;
     display: flex;
 }
-.jc_start{ justify-content: start;}
-.jc_end{ justify-content: end;}
+.jc_start{ justify-content: flex-start;}
+.jc_end{ justify-content: flex-end;}
 .name{
     width: 1024px;    height: 12em;
     display: flex;
@@ -133,13 +136,11 @@ header>nav ul li a{
     border: solid black;
     border-width: 2px 1px 2px 3px;
     border-radius: 95% 4% 83% 0.5% / 2% 90% 7% 70%;
-    /*padding: 4em 0 4em 15vw;*/
 }
 .b_radius_l{
     border: solid black;
     border-width: 2px 3px 0.5px 3px;
     border-radius: 90% 1% 80% 3% / 5% 99% 10% 97%;
-    /*padding: 4em 15vw 4em 0;*/
     flex-direction: row-reverse;
 }
 .name img{

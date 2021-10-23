@@ -15,21 +15,21 @@ $(window).scroll(function(){
 $('a').click(function(){
     var href = $(this).attr("href");
     var pos = $(href).offset().top+35;
-    $("html,body").animate({scrollTop: pos},1500);  
+    $("html,body").animate({scrollTop: pos},1250);  
     return false; 
 });
 
 /* background change */
 $(window).scroll(function(){
-    if(window.scrollY>$('#allright').offset().top){
+    if(window.scrollY>$('#allright').offset().top-100){
         $('body').css('background-color','rgb(145, 145, 145)');
         $('body').css('background-image','url(./assets/images/bg_black.png)');
-    }else if(window.scrollY>$('#so').offset().top){
+    }else if(window.scrollY>$('#so').offset().top-100){
         $('body').css('background-color','rgb(45, 95, 160)');
         $('body').css('background-image','url(./assets/images/bg_gray.png)');
-    }else if(window.scrollY>$('#what').offset().top-75){
+    }else if(window.scrollY>$('#what').offset().top-100){
         $('body').css('background-color','rgb(80, 80, 100)');
-        $('body').css('background-image','url(./assets/images/bg_black.png)');
+        $('body').css('background-image','');
     }else if(window.scrollY>$('main').offset().top){
         $('body').css('background-color','rgb(47, 47, 49)');
         $('body').css('background-image','');
@@ -45,7 +45,7 @@ $(window).scroll(function(){
             setTimeout(() => {
                 $(this).removeClass('name_trans_r');
                 $(this).removeClass('name_trans_l');
-            }, 500);
+            }, 300);
         }
     });
 });
