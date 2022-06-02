@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Minesweeper</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+
+        <style>
+            body{
+                background-color: #7a7a7a;
+            }
+            ul{padding: 0;}
+            li{
+                width: 100px;
+
+                padding: 10px 25px;
+                margin: 0 5px;
+
+                float: left;
+                list-style-type: none;
+
+                text-align: center;
+                
+                border :1px solid #c3c3c3;
+            }
+            .container{
+                width: 100vw; height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .options{
+                width: 650px;   height: 40px;
+                padding-bottom: 15px;
+                display: flex;
+                justify-content: space-around;
+                align-items:center;
+            }
+            .options div {
+                width: 200px;   height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                background-color: #c3c3c32c;
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+            }
+            .column{
+                border:1px solid #c3c3c3;
+                border-radius: 3px;
+
+                margin: 1.5px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .customForm{
+                width:100%;height: 100%;
+                position:absolute;
+                display: flex;
+                justify-content: space-around;
+                align-items:center;
+            }
+            .customForm div{
+                display: flex;
+                justify-content: space-evenly;
+                align-items:center;
+                flex-direction: column;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container"id="game">
+            <ul>
+                <li v-for="(item,index) in levels" @click="levelChange(index)">{{item.level}}</li>
+            </ul>
+            <div class="options">
+                <div class="time">TIME : {{time}}</div>
+                <div class="bombs">FLAG : {{levels[level].bombs-flags}}</div>
+                <div class="Restart" v-if="start" @click="clickStart()">RESTART</div>
+            </div>
+            <div style="position: relative;">
+                <div class="row" v-for="(item,indexA) in blocks">
+                    <div class="column" v-for="(grid,indexB) in item" style="position: relative;" :style="{width:blockSize-1+'px',height:blockSize-1+'px'}" 
+                    @mousedown="checkAround($event,indexA,indexB,true)" @mouseup="click($event,indexA,indexB)" @click.right="stopPropagation($event)">
+                        <div v-if="!grid.isOpen & !grid.isFlag & !grid.isCheck" style="width: 100%;height: 100%;border-radius: 3px;background-color: #585858;"></div>
+                        <div v-if="grid.isOpen">
+                            <div v-if="grid.type=='bomb'">
+                                <div style="background-color: #000000;border-radius: 100%;" :style="{width:blockSize*0.5+'px',height:blockSize*0.5+'px'}"></div>
+                                </div>
+                            <div v-if="grid.type=='empty' & grid.nearByBombs>0" style="user-select: none;">{{grid.nearByBombs}}</div>
+                        </div>
+                        <div v-if="grid.isFlag" style="width: 100%;height: 100%;position:absolute;">
+                            <div style="background-color: #f14c4c;position: absolute;" :style="{top:blockSize*0.15+'px',left:blockSize*0.2+'px',width:blockSize*0.6+'px',height:blockSize*0.3+'px'}"></div>
+                            <div style="background-color: #f14c4c;position: absolute;" :style="{top:blockSize*0.15+'px',left:blockSize*0.25+'px',width:'3px',height:blockSize*0.7+'px'}"></div>
+                        </div>
+                        <div v-if="grid.wrong" style="position:absolute; width: 100%; height: 100%; background-color: #00000065;">
+                            <div style="position:absolute; width: 100%; height: 100%; transform: rotate(45deg);">
+                                <div style="background-color: #f14c4c;position: absolute;" :style="{top:blockSize*0.15+'px',left:blockSize*0.5-1.5+'px',width:'3px',height:blockSize*0.7+'px'}"></div>
+                                <div style="background-color: #f14c4c;position: absolute;" :style="{left:blockSize*0.15+'px',top:blockSize*0.5-1.5+'px',height:'3px',width:blockSize*0.7+'px'}"></div>
+                            </div>
+                        </div>
+                        <div  v-if="grid.isCheck & !grid.isOpen & !grid.isFlag" style="width: 100%;height: 100%;border-radius: 3px;background-color: rgb(255, 255, 163);opacity: 0.1;"></div>
+                    </div>
+                </div>
+                <div v-if="!start"
+                style="width:100%;min-width:300px;height: 100%;min-height:300px;position: absolute; top: 0;left: 0; background-color: #2424245b ;display: flex; justify-content: center; align-items: center;" 
+                @click="clickStart()">
+                <div v-html="messenger" style="font-size:3.5em;color:#c3c3c3; text-align: center;"></div>
+                </div>
+                
+            </div>
+            <div v-if="customType" class="customForm">
+                <div style="width:500px; height: 500px;; background-color:#c3c3c3; border-radius: 5px;">
+                    WIDTH : 
+                    <input v-model.number="customWidth"  type="number" min="2" max="150" />
+                    HEIGHT : 
+                    <input v-model.number="customHeight" type="number" min="2" max="150" />
+                    BOMBS : 
+                    <input v-model.number="customBombs"  type="number" min="1" :max="customWidth*customHeight" />
+                    <div @click="customSetting" style="width: 150px; height: 40px;border: 1px solid black;border-radius:15px;">SET</div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./Assets/vue.js"></script>
+</html>
