@@ -47,7 +47,8 @@ let vm=Vue.createApp({
         clickStart(){     
             this.start=true;    this.firstClick=true;
             this.messenger='';
-            this.flags=0;   this.time=0
+            this.flags=0;  this.currentFlags=0;     this.currentOpen=0; 
+            this.time=0
             clearInterval(this.timer);
             this.timer=setInterval('timer()',1000)
             vm.setGame();
@@ -154,6 +155,7 @@ function setBombs(a,b){
         })
     })
 }
+zz=0;
 function openBlock(x,y){
 
     var block = vm.blocks[x][y];
@@ -173,6 +175,8 @@ function openBlock(x,y){
         }else{
             block.isOpen=true;
         }
+        zz++;
+        console.log(zz)
         vm.currentOpen++;
     }
     else if(block.type=='bomb'){
