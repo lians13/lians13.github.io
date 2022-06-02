@@ -125,6 +125,7 @@ let vm=Vue.createApp({
 vm.setGame();
 
 function setBombs(a,b){
+    bombs=0
     vm.firstClick=false;
 
     var near= nearByGrids(a,b);
@@ -142,7 +143,11 @@ function setBombs(a,b){
             })
             if(canput){
                 vm.blocks[x][y].type='bomb';
+            }else{
+                i--;
             }
+        }else{
+            i--;
         }
     }
 
@@ -155,7 +160,6 @@ function setBombs(a,b){
         })
     })
 }
-zz=0;
 function openBlock(x,y){
 
     var block = vm.blocks[x][y];
@@ -175,8 +179,7 @@ function openBlock(x,y){
         }else{
             block.isOpen=true;
         }
-        zz++;
-        console.log(zz)
+        
         vm.currentOpen++;
     }
     else if(block.type=='bomb'){
