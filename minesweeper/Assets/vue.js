@@ -101,6 +101,14 @@ let vm=Vue.createApp({
                     }
                     break;
             }
+            if(vm.currentFlags==vm.levels[vm.level].bombs | vm.currentOpen==(vm.levels[vm.level].width*vm.levels[vm.level].height-vm.levels[vm.level].bombs)){
+                clearInterval(vm.timer);
+                vm.start=false;
+        
+                setTimeout(() => {
+                    vm.messenger='SUCCESS  Again ?'
+                }, 500);
+            }
         },
         clickUp(event,a,b){
             if(!this.start){return}
@@ -192,15 +200,6 @@ function openBlock(x,y){
         vm.start=false;
         setTimeout(() => {
             vm.messenger='Failed  Again ?'
-        }, 500);
-    }
-
-    if(vm.currentFlags==vm.levels[vm.level].bombs | vm.currentOpen==(vm.levels[vm.level].width*vm.levels[vm.level].height-vm.levels[vm.level].bombs)){
-        clearInterval(vm.timer);
-        vm.start=false;
-
-        setTimeout(() => {
-            vm.messenger='SUCCESS  Again ?'
         }, 500);
     }
 }
