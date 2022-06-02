@@ -28,6 +28,7 @@ let vm=Vue.createApp({
             blockSize:35,
 
             blocks:[],
+            clicks:[false,false,false],
 
             start:false,
             firstClick:true,
@@ -38,7 +39,7 @@ let vm=Vue.createApp({
             time:0,     timer:null,
 
             customType:false,
-            customWidth:2,  customHeight:2,
+            customWidth:5,  customHeight:5,
             customBombs:1,
         }
     },
@@ -58,7 +59,7 @@ let vm=Vue.createApp({
             }else{
                 if(index==this.level){return};
                 this.level= index;
-                this.setGame();
+                this.clickStart();
                 this.firstClick=true;
             }
         },
@@ -75,67 +76,36 @@ let vm=Vue.createApp({
                 this.blocks.push(temp);
             }
         },
-        nearByGrids(x,y){
-            var temp =[
-                [x-1,y-1],
-                [x-1,y],
-                [x-1,y+1],
-                [x,y-1],
-                //[x,y],
-                [x,y+1],
-                [x+1,y-1],
-                [x+1,y],
-                [x+1,y+1],
-            ];
-            var output=[];
 
-            $.each(temp, function (index, value) { 
-                if(value[0]<0 | value[0]>vm.levels[vm.level].height-1 | value[1]<0 |value[1]>vm.levels[vm.level].width-1 ){
-                    
-                }else{
-                    output.push(value);
-                }
-                
-            });
-            return output;
-        },
-        
-        click(event,a,b){
+        clickDown(event,a,b){
             if(!this.start){return}
             switch (event.which){
-                //left
                 case 1:
+                    this.clicks[0]=true;
                     if(this.firstClick){setBombs(a,b);}
                     openBlock(a,b);
                     break;
-                //middle
                 case 2:
-                    showArround(a,b,false);
+                    this.clicks[1]=true;
+                    showArround(a,b,true);
                     quickOpen(a,b);
                     break;
-                //right
                 case 3:
-                    setFlag(a,b)
-                    
+                    this.clicks[2]=true;
+                    if(this.clicks[0]){
+                        showArround(a,b,true);
+                        quickOpen(a,b);
+                    }else{
+                        setFlag(a,b)
+                    }
                     break;
             }
-            //WIN
-            if(this.currentFlags==this.levels[this.level].bombs | this.currentOpen==(this.levels[this.level].width*this.levels[this.level].height-this.levels[this.level].bombs)){
-                clearInterval(this.timer);
-                vm.start=false;
-
-                setTimeout(() => {
-                    vm.messenger='SUCCESS<br>AGAIN ?'
-                }, 1000);
-            }
         },
-        checkAround(event,a,b,bool){
+        clickUp(event,a,b){
             if(!this.start){return}
-            if(event.which!=2){return;}
-            showArround(a,b,true)
-           
+            this.clicks[event.which-1]=false;
+            showArround(a,b,false);
         },
-
         customSetting(){
             var level = this.levels[3];
             level.width=this.customWidth;
@@ -154,17 +124,24 @@ let vm=Vue.createApp({
 vm.setGame();
 
 function setBombs(a,b){
-    console.log('set')
     vm.firstClick=false;
-     //put bombs
-     for(var i=0 ;i<vm.levels[vm.level].bombs;i++){
+
+    var near= nearByGrids(a,b);
+    near.push([a,b]);
+
+    //put bombs
+    for(var i=0 ;i<vm.levels[vm.level].bombs;i++){
         x= Math.floor(Math.random()*vm.levels[vm.level].height);
         y= Math.floor(Math.random()*vm.levels[vm.level].width);
-
-        if(vm.blocks[x][y].type=='empty' & !(x==a & y==b)){
-            vm.blocks[x][y].type='bomb';
-        }else{
-            i--;
+        
+        if(vm.blocks[x][y].type=='empty'){
+            var canput =true;
+            $.each(near,function(index,value){
+                if(x==value[0]&y==value[1]){canput=false}
+            })
+            if(canput){
+                vm.blocks[x][y].type='bomb';
+            }
         }
     }
 
@@ -172,7 +149,7 @@ function setBombs(a,b){
     $.each(vm.blocks,function(indexA, a){
         $.each(a,function(indexB,b){
             if(b.type=='empty'){
-                b.nearByBombs=bombsCount(vm.nearByGrids(indexA,indexB));
+                b.nearByBombs=bombsCount(nearByGrids(indexA,indexB));
             }
         })
     })
@@ -187,7 +164,7 @@ function openBlock(x,y){
         if(block.nearByBombs==0){
             block.isOpen=true;
 
-            var nearblocks=vm.nearByGrids(x,y);
+            var nearblocks=nearByGrids(x,y);
 
             $.each(nearblocks,function(index,item){
                 openBlock(item[0],item[1])
@@ -207,9 +184,17 @@ function openBlock(x,y){
         showAllBombs();
         vm.start=false;
         setTimeout(() => {
-            vm.messenger='Failed<br>AGAIN ?'
-        }, 1000);
-        
+            vm.messenger='Failed  Again ?'
+        }, 500);
+    }
+
+    if(vm.currentFlags==vm.levels[vm.level].bombs | vm.currentOpen==(vm.levels[vm.level].width*vm.levels[vm.level].height-vm.levels[vm.level].bombs)){
+        clearInterval(vm.timer);
+        vm.start=false;
+
+        setTimeout(() => {
+            vm.messenger='SUCCESS  Again ?'
+        }, 500);
     }
 }
 function setFlag(x,y){
@@ -235,16 +220,40 @@ function quickOpen(x,y){
 
     if(!block.isOpen | block.isFlag){return}
     
-    var nearblocks=vm.nearByGrids(x,y);
+    var nearblocks=nearByGrids(x,y);
     if(block.nearByBombs==flagCount(nearblocks)){
         $.each(nearblocks,function(index,item){
             openBlock(item[0],item[1])
         })
     }
 }
+function nearByGrids(x,y){
+    var temp =[
+        [x-1,y-1],
+        [x-1,y],
+        [x-1,y+1],
+        [x,y-1],
+        //[x,y],
+        [x,y+1],
+        [x+1,y-1],
+        [x+1,y],
+        [x+1,y+1],
+    ];
+    var output=[];
+
+    $.each(temp, function (index, value) { 
+        if(value[0]<0 | value[0]>vm.levels[vm.level].height-1 | value[1]<0 |value[1]>vm.levels[vm.level].width-1 ){
+            
+        }else{
+            output.push(value);
+        }
+        
+    });
+    return output;
+}
 function showArround(x,y,bool){
     if(bool){
-        var nearblocks=vm.nearByGrids(x,y);
+        var nearblocks=nearByGrids(x,y);
 
         $.each(nearblocks,function(index,item){               
             vm.blocks[item[0]][item[1]].isCheck=true;
@@ -276,7 +285,6 @@ function flagCount(array){
     return count;
 }
 function timer(){vm.time++;}
-
 function showAllBombs(){
     $.each(vm.blocks,function(indexA, a){
         $.each(a,function(indexB,b){

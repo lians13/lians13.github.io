@@ -98,7 +98,7 @@
             <div style="position: relative;">
                 <div class="row" v-for="(item,indexA) in blocks">
                     <div class="column" v-for="(grid,indexB) in item" style="position: relative;" :style="{width:blockSize-1+'px',height:blockSize-1+'px'}" 
-                    @mousedown="checkAround($event,indexA,indexB,true)" @mouseup="click($event,indexA,indexB)" @click.right="stopPropagation($event)">
+                    @mousedown="clickDown($event,indexA,indexB,true)" @mouseup="clickUp($event,indexA,indexB)" @click.right="stopPropagation($event)">
                         <div v-if="!grid.isOpen & !grid.isFlag & !grid.isCheck" style="width: 100%;height: 100%;border-radius: 3px;background-color: #585858;"></div>
                         <div v-if="grid.isOpen">
                             <div v-if="grid.type=='bomb'">
@@ -119,19 +119,18 @@
                         <div  v-if="grid.isCheck & !grid.isOpen & !grid.isFlag" style="width: 100%;height: 100%;border-radius: 3px;background-color: rgb(255, 255, 163);opacity: 0.1;"></div>
                     </div>
                 </div>
-                <div v-if="!start"
-                style="width:100%;min-width:300px;height: 100%;min-height:300px;position: absolute; top: 0;left: 0; background-color: #2424245b ;display: flex; justify-content: center; align-items: center;" 
+            </div>
+            <div v-if="!start"
+                style="width:600px;height: 75px; background-color: #2424245b ;display: flex; justify-content: center; align-items: center;" 
                 @click="clickStart()">
                 <div v-html="messenger" style="font-size:3.5em;color:#c3c3c3; text-align: center;"></div>
-                </div>
-                
             </div>
             <div v-if="customType" class="customForm">
                 <div style="width:500px; height: 500px;; background-color:#c3c3c3; border-radius: 5px;">
                     WIDTH : 
-                    <input v-model.number="customWidth"  type="number" min="2" max="150" />
+                    <input v-model.number="customWidth"  type="number" min="5" max="150" />
                     HEIGHT : 
-                    <input v-model.number="customHeight" type="number" min="2" max="150" />
+                    <input v-model.number="customHeight" type="number" min="5" max="150" />
                     BOMBS : 
                     <input v-model.number="customBombs"  type="number" min="1" :max="customWidth*customHeight" />
                     <div @click="customSetting" style="width: 150px; height: 40px;border: 1px solid black;border-radius:15px;">SET</div>
