@@ -2,7 +2,7 @@
 var grid=document.getElementById("grid");
 var ctx =grid.getContext('2d');
 
-var gridColor= "#c3c3c3";
+var gridColor= "#666";
 
 var girdSize = vm.blockSize;
 

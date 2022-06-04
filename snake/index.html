@@ -13,10 +13,16 @@
         crossorigin="anonymous"></script>
         <script src="https://unpkg.com/vue@next"></script>
 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
         <style>
             body{
                 margin: 0;
-                background-color: #7a7a7a;
+                background-color: #222222;
+                font-family: 'Press Start 2P', cursive;
             }
             .container{
                 width: 100vw; height: 100vh;
@@ -24,33 +30,73 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                color: white;
             }
             .snakeGame{
                 position: relative;
 
                 border: 1px solid #c3c3c3;
-                border-radius: 5px;
+                border-radius: 0px;
+                background-color: rgb(251, 252, 235);
             }
             .snakeGame div{
                 position: absolute;
             }
+            .colorShadow{
+                box-shadow:
+                0 0 50px 10px rgb(90, 101, 255),
+                0 0 150px 30px rgb(104, 195, 255);
+            }
             .block{
                 border-radius: 1.5px;
                 background-color: black;
+                box-shadow:0 0 30px 1px rgba(121, 121, 121, 0.7);
             }
             .snake div:first-child{
                 background-color: rgb(61, 61, 61);
             }
             .point{
-                border-radius: 30%;
-                background-color: #f14c4c;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #ff2d2d;
+                box-shadow:0 0 30px 1px rgba(255, 56, 56, .7);
+            }
+            .point div{
+                width:175%;height :175%;
+                position:absolute;
+                border-radius: px;
+                background: #ff464646;
+  
+                animation:grow;
+                animation-duration: 1s;
+                animation-timing-function:ease-out;
+                animation-iteration-count: infinite;
+            }
+            .point div:nth-child(1){animation-delay: 0s;}
+            .point div:nth-child(2){animation-delay: -0.3s;}
+            .point div:nth-child(3){animation-delay: -0.6s;}
+            @keyframes grow{
+                0%  {
+                    opacity:0;
+                    transform: scale(0.3, 0.3);
+                }
+                50% {
+                    opacity:1;
+                }
+                75% {
+                    opacity:0.5;
+                }
+                100%{
+                    opacity:0;
+                    transform: scale(1, 1);
+                }
             }
             .startbt{
                 font-size: 1.5em;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 5px;
                 background-color: #c3c3c3;
             }
         </style>
@@ -58,14 +104,17 @@
 
     <body>
         <div class="container"id="game">
-            <div style="font-size:2em;padding-bottom: 15px;">SCORE : {{score}}</div>
+            <div style="font-size:2em;padding-bottom: 15px; z-index: 9;">SCORE : {{score}}</div>
             
             <div>
-                <div class="snakeGame" :style="{width:width*blockSize+'px', height:height*blockSize+'px'}">
+                <div class="snakeGame colorShadow" :style="{width:width*blockSize+'px', height:height*blockSize+'px'}">
                     <div style="opacity: 0.2;">
                         <canvas id="grid" :width="width*blockSize" :height="height*blockSize"></canvas>
                     </div>
                     <div class="point" v-if="start" :style="{top:pointBlockTop*blockSize+'px',left:pointBlockLeft*blockSize+'px',height:blockSize-1+'px',width:blockSize-1+'px'}">
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
                     <div class="snake">
                         <div v-for="(item,index) in snakeBlock" class="block" :style=" {top:item.top*blockSize +'px',left:item.left*blockSize +'px' ,height:blockSize-1+'px',width:blockSize-1+'px'}">
@@ -75,7 +124,7 @@
                 </div>
             </div>
 
-            <div style="padding-top: 15px;">使用WASD來操控蛇的方向</div>
+            <div style="padding-top: 15px;z-index: 9;">Use WASD to control the direction of the snake</div>
         </div>
     </body>
     <script src="./Assets/vue.js"></script>
