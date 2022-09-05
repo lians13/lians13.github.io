@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+        <style>
+            @font-face {
+                font-family:'noto-sans-tc';
+                src: url('assets/font/Noto_Sans_TC/NotoSansTC-Regular.otf') format('opentype');
+            }
+            :root{
+                --bg-color:#f5f5f5;
+                --light-blue:#7fb8e5;
+                --dark-blue:#374A67;
+
+            }
+            body{
+                font-family: noto-sans-tc;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="sticky-top" style="background-color: var(--bg-color);">
+            
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo02.png"/>
+                  </a>
+    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link"href="#">企業簡介</a>
+                      </li>
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">產品介紹</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">最新消息</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">聯絡我們</a>
+                      </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="查詢商品" aria-label="Search">
+                    </form>
+
+                  </div>
+
+                </div>
+              </nav>
+
+        </header>
+
+        <main>
+
+            <div>
+                <div id="carouselCaptions" class="carousel carousel-dark carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner01.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner02.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner03.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner04.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner05.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.gold-water.com.tw/images/banner/banner06.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container pt-5">
+
+                <div class="row justify-content-center g-3">
+
+                    <div class="col-lg-12 d-flex justify-content-center py-3">
+                        <h2 class="m-0">最新消息</h2>
+                    </div>
+
+                    <div class="col col-11 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/logo.jpg" class="card-img-top" alt="...">
+
+                            <div class="card-body">
+                                <h5 class="card-title">重要聲明</h5>
+                                <p class="card-text overflow-hidden px-2" style="max-height: 6em;">
+                                    敬告各配合廠商及往來客戶：<br>
+                                    本公司員工OOO、 XXX，因無故礦工並盜取公司資料、散播不實謠言，進而損害公司名譽及客戶權益，本公司已余105年5月6日將兩員工予以解雇。
+                                </p>
+                            </div>
+
+                            <div class="card-footer text-end bg-transparent">
+                                 <small class="text-muted">2016-05-09</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-11 col-lg-4">
+                        <div class="card h-100">                            
+                            <img src="assets/images/logo.jpg" class="card-img-top" alt="...">
+
+                            <div class="card-body">
+                                <h5 class="card-title overflow-hidden" style="white-space: nowrap; text-overflow:ellipsis;">超級長的標題超級長的標題超級長的標題超級長的標題</h5>
+                                <p class="card-text overflow-hidden px-2" style="max-height: 6em; ">
+                                    超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容超級長的內容
+                                </p>
+                            </div>
+                            <div class="card-footer text-end bg-transparent">
+                                <small class="text-muted">2016-05-09</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-11 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/logo.jpg" class="card-img-top" alt="...">
+
+                            <div class="card-body">
+                                <h5 class="card-title">標題</h5>
+                                <p class="card-text overflow-hidden px-2" style="max-height: 6em; ">
+                                    很短的內容
+                                </p>
+                            </div>
+                            <div class="card-footer text-end bg-transparent">
+                                <small class="text-muted">2016-05-09</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-none d-lg-flex col-lg-5  justify-content-end align-items-center pt-5">
+                        <div class="d-none d-md-block w-75 bg-secondary" style="height: 1px;"></div>
+                    </div>
+                    <div class="col-lg-2 pt-5 text-center">
+                        <button class="btn btn-outline-secondary">查看更多</button>
+                    </div>
+                    <div class="d-none d-lg-flex col-lg-5 align-items-center pt-5">
+                        <div class="d-none d-md-block w-75 bg-secondary" style="height: 1px;"></div>
+                    </div>
+
+                </div>
+
+                <div class="row py-3">
+                    <div class="col-12 col-lg-8">
+                        <div class="row row-cols-4 row-cols-lg-5 g-3 h-100">
+                            <div class="col-12 col-lg-12 text-center py-3">
+                                <h3>專業認證</h3>
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C01.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C02.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C03.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C04.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C05.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C06.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C07.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C08.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C09.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <img src="https://www.gold-water.com.tw/images/C10.jpg" class="img-thumbnail mx-auto d-block" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 pt-3 pt-lg-0">
+                        <div class="row g-3 h-100">
+                            <div class="col-12 text-center py-3">
+                                <h3>門市據點</h3>
+                            </div>
+                            <div class="col-12 text-decoration-none">
+                                <div class="mx-3">
+                                    <p>
+                                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                                        </svg>
+                                        台中市北屯區河北路二段105號
+                                    </p>
+                                    <p>
+                                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                        </svg>
+                                        04-2236-443
+                                    </p>
+                                    <p>
+                                        周一到周六08:00AM - 18:00PM<br>
+                                        每周日及當月第四個禮拜六公休
+                                    </p>
+                                    <p><small>如有任何相關產品的問題，本公司非常期待您的來電聯繫或留下相關資料，客服人員會儘快與您聯絡。</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+        </main>
+        <footer >
+            <div class="py-5 mt-5" style="background-color:#495A75;">
+                <div class="container text-light">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-start">
+                                <p>
+                                地址: 台中市北屯區河北路二段105號<br>
+                                TEL: (04) 2236-4433 / FAX: (04) 2237-5081
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-end">
+                                <div>
+                                    <p>
+                                        <small>Copyright 2022 ©金龍王國際飲用水有限公司 All Rights Reserved.</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

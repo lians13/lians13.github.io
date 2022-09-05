@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+        <style>
+            @font-face {
+                font-family:'noto-sans-tc';
+                src: url('assets/font/Noto_Sans_TC/NotoSansTC-Regular.otf') format('opentype');
+            }
+            :root{
+                --bg-color:#f5f5f5;
+                --light-blue:#7fb8e5;
+                --dark-blue:#374A67;
+
+            }
+            body{
+                font-family: noto-sans-tc;
+            }
+        </style>
+        <style>
+            .typeForm input[type=checkbox]{
+                display: none;
+            }
+
+            .typeForm input[type=checkbox] ~label{
+                padding: 0.3em 0.5em;
+                margin:0.15em 0.5em;
+                color: var(--dark-blue);
+                border: 1px solid var(--dark-blue);
+                border-radius: 5px;
+                background-color: transparent;
+                user-select: none;
+                transition: 0.5s;
+            }
+
+            .typeForm input[type=checkbox]:checked ~label{
+                color: black;
+                background-color: var(--light-blue);
+                border-color: var(--light-blue);
+            }
+        </style>
+    </head>
+    <body>
+        <header class="sticky-top" style="background-color: var(--bg-color);">
+            
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo02.png"/>
+                  </a>
+    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link"href="#">企業簡介</a>
+                      </li>
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">產品介紹</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">最新消息</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">聯絡我們</a>
+                      </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="查詢商品" aria-label="Search">
+                    </form>
+
+                  </div>
+
+                </div>
+              </nav>
+
+        </header>
+
+        <main>
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-12">
+                        <div class="text-dark text-center py-5">
+                            <h2 class="display-6">聯絡我們</h2>
+                            <p>如有任何相關產品的問題，本公司非常期待您的來電聯繫或留下相關資料，客服人員會儘快與您聯絡。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-11 col-xl-7">
+                        <form class="d-flex flex-row flex-wrap">
+                            <div class="p-2 w-50">
+                                <input type="text" placeholder="您的姓名" class="p-2 w-100" required/>
+                            </div>
+                            <div class="p-2 w-50">
+                                <input type="tel" placeholder="您的聯絡電話" class="p-2 w-100" required/>
+                            </div>
+                            <div class="p-2 w-100">
+                                <input type="email" placeholder="您的E-mail" class="p-2 w-100" required/>
+                            </div>
+                            <div class="p-2 mt-3 w-100">
+                                <textarea placeholder="信件內容" rows="10" class="w-100 p-3"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center my-5 w-100">
+                                <hr class="w-25">
+                                <button type="submit" class="btn btn-outline-secondary mx-5"> 送出訊息 </button>
+                                <hr class="w-25">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-11 col-md-10 col-xl-5 mt-4 mt-md-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.9968575054404!2d120.68110331498924!3d24.171842984383236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346917dc9fb19d79%3A0x631258912bf32d8!2z6YeR6b6N546L5ZyL6Zqb6aOy55So5rC05pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1662357806573!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
+                    
+                        <div class="pt-3 px-2">
+                            <h5>金龍王國際飲用水有限公司</h5>
+                            <p>
+                                台中市北屯區河北路二段105號<br>
+                                電話: 04-2236-4433 / 04-2235-9769 / 04-2233-5448<br>
+                                傳真: 04-2237-5081<br>
+                                電子信箱: <a href="mailto:klw.waterfilter@gmail.com">klw.waterfilter@gmail.com<br>
+                                </a>電子信箱:<a href="mailto:klw4228@yahoo.com.tw" target="_blank" title="This external link will open in a new window"> klw4228@yahoo.com.tw</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </main>
+
+        <footer >
+            <div class="py-5 mt-5" style="background-color:#495A75;">
+                <div class="container text-light">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-start">
+                                <p>
+                                地址: 台中市北屯區河北路二段105號<br>
+                                TEL: (04) 2236-4433 / FAX: (04) 2237-5081
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-end">
+                                <div>
+                                    <p>
+                                        <small>Copyright 2022 ©金龍王國際飲用水有限公司 All Rights Reserved.</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

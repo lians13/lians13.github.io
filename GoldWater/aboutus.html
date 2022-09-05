@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+        <style>
+            @font-face {
+                font-family:'noto-sans-tc';
+                src: url('assets/font/Noto_Sans_TC/NotoSansTC-Regular.otf') format('opentype');
+            }
+            :root{
+                --bg-color:#f5f5f5;
+                --light-blue:#7fb8e5;
+                --dark-blue:#374A67;
+
+            }
+            body{
+                font-family: noto-sans-tc;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="sticky-top" style="background-color: var(--bg-color);">
+            
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo02.png"/>
+                  </a>
+    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link"href="#">企業簡介</a>
+                      </li>
+                      <li class="nav-item m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">產品介紹</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">最新消息</a>
+                      </li>
+                      <li class="nav-item  m-0 ms-3 m-md-2">
+                        <a class="nav-link" href="#">聯絡我們</a>
+                      </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="查詢商品" aria-label="Search">
+                    </form>
+
+                  </div>
+
+                </div>
+              </nav>
+
+        </header>
+
+        <main>
+
+            <div class="position-relative">
+                <div>
+                    <img src="https://www.gold-water.com.tw/images/pic-1.jpg" class="w-100" style="filter:blur(3px) opacity(0.75);">
+                </div>
+                <div class="d-none d-lg-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100" >
+                    <div class="bg-white bg-opacity-50 text-dark rounded p-5">
+                        <h2>關於金龍王</h2>
+                        <p>專業、服務、品質，齊全為訴求，多年苦心經營在全台</p>
+                    </div >
+                </div>
+                <div class="d-flex d-lg-none justify-content-center align-items-center pt-3" >
+                    <div class="text-dark">
+                        <h2>關於金龍王</h2>
+                        <p>專業、服務、品質，齊全為訴求，多年苦心經營在全台</p>
+                    </div >
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-11 col-lg-8 my-5">
+                        <div class="row row-cols-2 row-cols-lg-4">
+                            
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <p class="display-4">06</p>
+                                    <p>個</p>
+                                </div>
+                                <p class="text-center">銷售國家</p>
+                            </div>
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <p class="display-4">10</p>
+                                    <p>項</p>
+                                </div>
+                                <p class="text-center">專業認證</p>
+                            </div>
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <p class="display-4">40</p>
+                                    <p>年</p>
+                                </div>
+                                <p class="text-center">經營時間</p>
+                            </div>
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <p class="display-4">99</p>
+                                    <p>+</p>
+                                </div>
+                                <p class="text-center">多樣產品</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-11 col-lg-6">
+                        <h3 class="text-center pb-3">全方位飲水機服務</h3>
+                        <p>
+                            金龍王飲水機於民國62年創立，原於北區賴厝廍以專業製造飲水機及濾材聞名業界，
+                            更於民國72年擴大經營模式遷往北屯區河北路，同時建立營業服務門市繼續為廣大的愛用者服務，
+                            爾後更引進美國進口濾材、淨水設備及研發製造蒸氣(飯)箱再次聞名。
+                        </p>
+                        <p>
+                            並與國內大廠龍泉飲用水設備合作創造雙贏，各大公家機關、學校、企業更是指名愛用，
+                            至今已有40年專業歷史，草創之初的基本概念，就是以專業、服務、品質、齊全為訴求，
+                            多年苦心經營在全台業界已享有盛名，不管是專業或服務， 
+                            及品質更是公司經營的血脈，歡迎同業 先進及社會大眾來檢視我們的專業我們一定會以虛心的態度來接受。
+                        </p>
+                        <p>
+                            目前銷售的商品包括RO逆滲透設備、家用飲水機、商業用飲水設備、蒸氣箱、蒸飯箱、程控式飲水機、殺菌式飲水機、殺菌生飲機、中古飲水機、各式過濾濾心、美國進口濾心、電解水機、水質偵測器材、及水處理相關配件等。
+                        </p>
+                        <p>
+                            金龍王國際飲用水有限公司營運計劃，自創立四十多年以來，除了開發新產品外，拓展加盟體系列為年度重點等。將秉持一貫以顧客為導向、以服務為宗旨，不斷的向前邁進，回顧過去多來不眠不休、高度成長以及輝煌戰績，內心實有無限的感觸及喜悅。
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-lg-8 my-5">
+                        <div class="row row-cols-3">
+                            
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-center mt-3">專業建議</p>
+                            </div>
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-center mt-3">長期合作</p>
+                            </div>
+                            <div class="col border-start border-end my-2">
+                                <div class="d-flex justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-screwdriver" viewBox="0 0 16 16">
+                                        <path d="M0 .995.995 0l3.064 2.19a.995.995 0 0 1 .417.809v.07c0 .264.105.517.291.704l5.677 5.676.909-.303a.995.995 0 0 1 1.018.24l3.338 3.339a.995.995 0 0 1 0 1.406L14.13 15.71a.995.995 0 0 1-1.406 0l-3.337-3.34a.995.995 0 0 1-.24-1.018l.302-.909-5.676-5.677a.995.995 0 0 0-.704-.291H3a.995.995 0 0 1-.81-.417L0 .995Zm11.293 9.595a.497.497 0 1 0-.703.703l2.984 2.984a.497.497 0 0 0 .703-.703l-2.984-2.984Z"/>
+                                      </svg>
+                                </div>
+                                <p class="text-center mt-3">售後服務</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </main>
+        <footer >
+            <div class="py-5 mt-5" style="background-color:#495A75;">
+                <div class="container text-light">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-start">
+                                <p>
+                                地址: 台中市北屯區河北路二段105號<br>
+                                TEL: (04) 2236-4433 / FAX: (04) 2237-5081
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 h-100">
+                            <div class="text-center text-lg-end">
+                                <div>
+                                    <p>
+                                        <small>Copyright 2022 ©金龍王國際飲用水有限公司 All Rights Reserved.</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
