@@ -16,7 +16,7 @@ https://lians13.github.io/minesweeper/
 
 踩地雷小遊戲
 
-#GoldWater
+# GoldWater
 
 切版畫面呈現頁面
 
