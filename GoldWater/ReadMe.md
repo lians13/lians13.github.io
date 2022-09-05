@@ -1,5 +1,5 @@
 # GoldWater
-切版畫面呈現頁面
+純切版畫面呈現頁面，並無實際功能
 
 首頁 https://lians13.github.io/GoldWater/
 
