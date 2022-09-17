@@ -92,28 +92,28 @@
                             
                             <div class="col border-start border-end my-2">
                                 <div class="d-flex justify-content-center">
-                                    <p class="display-4">06</p>
+                                    <p class="display-4 count-play">06</p>
                                     <p>個</p>
                                 </div>
                                 <p class="text-center">銷售國家</p>
                             </div>
                             <div class="col border-start border-end my-2">
                                 <div class="d-flex justify-content-center">
-                                    <p class="display-4">10</p>
+                                    <p class="display-4 count-play">10</p>
                                     <p>項</p>
                                 </div>
                                 <p class="text-center">專業認證</p>
                             </div>
                             <div class="col border-start border-end my-2">
                                 <div class="d-flex justify-content-center">
-                                    <p class="display-4">40</p>
+                                    <p class="display-4 count-play">40</p>
                                     <p>年</p>
                                 </div>
                                 <p class="text-center">經營時間</p>
                             </div>
                             <div class="col border-start border-end my-2">
                                 <div class="d-flex justify-content-center">
-                                    <p class="display-4">99</p>
+                                    <p class="display-4 count-play">99</p>
                                     <p>+</p>
                                 </div>
                                 <p class="text-center">多樣產品</p>
@@ -204,5 +204,40 @@
                 </div>
             </div>
         </footer>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var top = $(window).height()+$(this).scrollTop();
+                $('.count-play').each(function(){
+                    if(top >= $(this).offset().top){
+                        countDisplay($(this));
+                        $(this).removeClass('count-play');
+                    }
+                })
+            })
+            $(window).scroll(function(){
+                var top = $(window).height()+$(this).scrollTop();
+                $('.count-play').each(function(){
+                    if(top >= $(this).offset().top){
+                        countDisplay($(this));
+                        $(this).removeClass('count-play');
+                    }
+                })
+            })
+            
+            function countDisplay(obj){
+                var count= 0;
+                var max_count=Number(obj.html());
+
+                obj.html(count.toString().padStart(2,'0'));
+
+                var t = setInterval(function(){
+                    if(count>=max_count){clearInterval(t);}
+                    
+                    obj.html(count.toString().padStart(2,'0'));
+                    count++;
+                },(1250/max_count));
+            }
+        </script>
     </body>
 </html>
