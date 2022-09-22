@@ -21,7 +21,7 @@ main{
 header{
     background-color: var(--bg-color);
 }
-footer{
+footer div{
     background-color:#495A75;
 }
 .productName{
