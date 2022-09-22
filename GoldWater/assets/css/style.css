@@ -1,0 +1,31 @@
+@font-face {
+    font-family:'noto-sans-tc';
+    /*src: url('assets/font/Noto_Sans_TC/NotoSansTC-Regular.otf') format('opentype');*/
+    src: url(../font/Noto_Sans_TC/NotoSansTC-Regular.otf) format('opentype');
+}
+:root{
+    --bg-color:#f5f5f5;
+    --light-blue:#7fb8e5;
+    --dark-blue:#374A67;
+
+}
+body{
+    font-family: noto-sans-tc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex-grow: 1;
+}
+header{
+    background-color: var(--bg-color);
+}
+footer{
+    background-color:#495A75;
+}
+.productName{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
