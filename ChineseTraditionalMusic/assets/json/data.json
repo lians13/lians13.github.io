@@ -2,6 +2,39 @@
   "result": [
     {
       "id": 0,
+      "class": "pipe",
+      "className": "吹管樂器",
+      "description": "吹管樂器起源甚古，遠在新石器及夏禹時期都有吹管樂器的發現。「詩經」中有簫、管、籥、箎、笙等樂器的記載，常在軍隊行進時吹奏，也有用作儀仗隊或在宴會上演奏和其他娛樂之用。",
+      "instruments": {
+        "0": {
+          "name": "曲笛",
+          "description": "主要以竹子制作，管身上開吹孔、膜孔、按音孔和出音孔。曲笛演奏柔美抒情，常在樂團中負責領奏。",
+          "image": "./assets/images/instruments/pipe/00.png"
+        },
+        "1": {
+          "name": "梆笛",
+          "description": "外型、結構與曲笛相似，管身較細而短。音調高亢明亮，擅長演奏熱烈歡快的樂曲。",
+          "image": "./assets/images/instruments/pipe/01.png"
+        },
+        "2": {
+          "name": "簫",
+          "description": "吹奏法和樣貌類似笛子，但簫為直吹，吹口成「V」字形。音色圓潤輕柔、幽靜典雅，常見於獨奏或琴簫合奏。",
+          "image": "./assets/images/instruments/pipe/02.png"
+        },
+        "3": {
+          "name": "笙",
+          "description": "自由簧管樂器，是吹管樂器中少在吹、吸氣都能發聲的樂器，也是唯一能吹奏和聲的樂器。現今樂團中多數使用改良後的現代加鍵笙。笙在吹吸氣皆能發音，因此也有不少特殊的演奏技巧。",
+          "image": "./assets/images/instruments/pipe/03.png"
+        },
+        "4": {
+          "name": "嗩吶",
+          "description": "雙簧管樂器，形制上分為高音嗩吶、中音嗩吶跟小嗩吶。在民間婚喪喜慶以及民俗節日中，它是主奏樂器。",
+          "image": "./assets/images/instruments/pipe/04.png"
+        }
+      }
+    },
+    {
+      "id": 1,
       "class": "stringed",
       "className": "拉弦樂器",
       "description": "拉弦樂器以胡琴為基礎發展，主要有二胡、中胡、高胡、京胡、板胡等。擅於演奏，其弓法、指法多變豐富，在多年發展下，逐漸成為樂團中主要聲部。",
@@ -44,7 +77,7 @@
       }
     },
     {
-      "id": 1,
+      "id": 2,
       "class": "plucked",
       "className": "彈撥樂器",
       "description": "彈撥樂器是用手指或撥子撥弦，及用琴竹擊弦而發音的樂器總稱。彈撥樂器的歷史悠久，種類和形制繁多，是極富特色的一類絃樂器。",
@@ -78,39 +111,6 @@
           "name": "月琴",
           "description": "外型與阮相當類似，琴頸較短小。音域約兩個八度，音量較小、音色清脆柔和。多出現於民間歌謠、戲曲說唱伴奏，也為台灣歌仔戲特色樂器。",
           "image": "./assets/images/instruments/plucked/05.png"
-        }
-      }
-    },
-    {
-      "id": 2,
-      "class": "pipe",
-      "className": "吹管樂器",
-      "description": "吹管樂器起源甚古，遠在新石器及夏禹時期都有吹管樂器的發現。「詩經」中有簫、管、籥、箎、笙等樂器的記載，常在軍隊行進時吹奏，也有用作儀仗隊或在宴會上演奏和其他娛樂之用。",
-      "instruments": {
-        "0": {
-          "name": "曲笛",
-          "description": "主要以竹子制作，管身上開吹孔、膜孔、按音孔和出音孔。曲笛演奏柔美抒情，常在樂團中負責領奏。",
-          "image": "./assets/images/instruments/pipe/00.png"
-        },
-        "1": {
-          "name": "梆笛",
-          "description": "外型、結構與曲笛相似，管身較細而短。音調高亢明亮，擅長演奏熱烈歡快的樂曲。",
-          "image": "./assets/images/instruments/pipe/01.png"
-        },
-        "2": {
-          "name": "簫",
-          "description": "吹奏法和樣貌類似笛子，但簫為直吹，吹口成「V」字形。音色圓潤輕柔、幽靜典雅，常見於獨奏或琴簫合奏。",
-          "image": "./assets/images/instruments/pipe/02.png"
-        },
-        "3": {
-          "name": "笙",
-          "description": "自由簧管樂器，是吹管樂器中少在吹、吸氣都能發聲的樂器，也是唯一能吹奏和聲的樂器。現今樂團中多數使用改良後的現代加鍵笙。笙在吹吸氣皆能發音，因此也有不少特殊的演奏技巧。",
-          "image": "./assets/images/instruments/pipe/03.png"
-        },
-        "4": {
-          "name": "嗩吶",
-          "description": "雙簧管樂器，形制上分為高音嗩吶、中音嗩吶跟小嗩吶。在民間婚喪喜慶以及民俗節日中，它是主奏樂器。",
-          "image": "./assets/images/instruments/pipe/04.png"
         }
       }
     },
