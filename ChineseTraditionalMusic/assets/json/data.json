@@ -5,147 +5,147 @@
       "class": "pipe",
       "className": "吹管樂器",
       "description": "吹管樂器起源甚古，遠在新石器及夏禹時期都有吹管樂器的發現。「詩經」中有簫、管、籥、箎、笙等樂器的記載，常在軍隊行進時吹奏，也有用作儀仗隊或在宴會上演奏和其他娛樂之用。",
-      "instruments": {
-        "0": {
+      "instruments": [
+        {
           "name": "曲笛",
           "description": "主要以竹子制作，管身上開吹孔、膜孔、按音孔和出音孔。曲笛演奏柔美抒情，常在樂團中負責領奏。",
           "image": "./assets/images/instruments/pipe/00.png"
         },
-        "1": {
+        {
           "name": "梆笛",
           "description": "外型、結構與曲笛相似，管身較細而短。音調高亢明亮，擅長演奏熱烈歡快的樂曲。",
           "image": "./assets/images/instruments/pipe/01.png"
         },
-        "2": {
+        {
           "name": "簫",
           "description": "吹奏法和樣貌類似笛子，但簫為直吹，吹口成「V」字形。音色圓潤輕柔、幽靜典雅，常見於獨奏或琴簫合奏。",
           "image": "./assets/images/instruments/pipe/02.png"
         },
-        "3": {
+        {
           "name": "笙",
           "description": "自由簧管樂器，是吹管樂器中少在吹、吸氣都能發聲的樂器，也是唯一能吹奏和聲的樂器。現今樂團中多數使用改良後的現代加鍵笙。笙在吹吸氣皆能發音，因此也有不少特殊的演奏技巧。",
           "image": "./assets/images/instruments/pipe/03.png"
         },
-        "4": {
+        {
           "name": "嗩吶",
           "description": "雙簧管樂器，形制上分為高音嗩吶、中音嗩吶跟小嗩吶。在民間婚喪喜慶以及民俗節日中，它是主奏樂器。",
           "image": "./assets/images/instruments/pipe/04.png"
         }
-      }
+      ]
     },
     {
       "id": 1,
       "class": "stringed",
       "className": "拉弦樂器",
       "description": "拉弦樂器以胡琴為基礎發展，主要有二胡、中胡、高胡、京胡、板胡等。擅於演奏，其弓法、指法多變豐富，在多年發展下，逐漸成為樂團中主要聲部。",
-      "instruments": {
-        "0": {
+      "instruments": [
+        {
           "name": "二胡",
           "description": "二胡為拉弦樂器中，最常見且最具代表性的樂器。音域約兩個八度，音色多變。在演奏中常擔任主奏樂器。",
           "image": "./assets/images/instruments/stringed/00.png"
         },
-        "1": {
+        {
           "name": "高胡",
           "description": "高音二胡簡稱高胡，它是在二胡的基礎上創制的，將弦改為鋼絲弦，形制如二胡，琴筒比二胡細，音色尖銳，多用於演奏活潑、華麗的曲調。中胡定弦比二胡高四度。",
           "image": "./assets/images/instruments/stringed/01.png"
         },
-        "2": {
+        {
           "name": "中胡",
           "description": "中音二胡簡稱中胡，它是在二胡的基礎上創制的，其形如二胡，琴筒比二胡大，音色沉厚，不但可用於合奏、伴奏，有時亦做為獨奏樂器。中胡定弦比二胡低一個純五度。",
           "image": "./assets/images/instruments/stringed/02.png"
         },
-        "3": {
+        {
           "name": "革胡",
           "description": "結構、定弦、發聲、演奏方式類似與大提琴，是保留胡琴類樂器特色並加西方提琴樂器研製而成。近代演出多數樂團演奏使用大提琴取代。",
           "image": "./assets/images/instruments/stringed/03.png"
         },
-        "4": {
+        {
           "name": "低音革胡",
           "description": "與革胡結構相同，但深音更加低沉。近代演出多數樂團演奏使用低音大提琴取代。",
           "image": "./assets/images/instruments/stringed/04.png"
         },
-        "5": {
+        {
           "name": "京胡",
           "description": "京胡約在清乾隆末年，隨著京戲而形成，多用於京戲的伴奏。聲音響亮清脆、音色尖銳，因聲音奇特，較少於樂團中出現。",
           "image": "./assets/images/instruments/stringed/05.png"
         },
-        "6": {
+        {
           "name": "板胡",
           "description": "隨戲曲梆子腔的出現，在胡琴的基礎上產生的樂器。大約在明末清初隨梆子腔的興起而流行。為多種地方戲曲主要伴奏樂器。",
           "image": "./assets/images/instruments/stringed/06.png"
         }
-      }
+      ]
     },
     {
       "id": 2,
       "class": "plucked",
       "className": "彈撥樂器",
       "description": "彈撥樂器是用手指或撥子撥弦，及用琴竹擊弦而發音的樂器總稱。彈撥樂器的歷史悠久，種類和形制繁多，是極富特色的一類絃樂器。",
-      "instruments": {
-        "0": {
+      "instruments": [
+        {
           "name": "古箏",
           "description": "歷史極為長遠的樂器，在春秋戰國時以被記載。流傳區域相當廣泛，在日本、韓國、琉球、越南、蒙古都有不同型似的變化。經改良後的有十二、十六、十八、二十一、二十五弦多種定弦，音域相當廣。演奏紙發相當多變經常出現在樂團演奏、戲曲伴奏中。",
           "image": "./assets/images/instruments/plucked/00.png"
         },
-        "1": {
+        {
           "name": "揚琴",
           "description": "擊弦樂器，兼具打擊跟弦樂器特色，有時也會被分類到打擊樂器。使用琴竹敲打弦擊奏，並非彈撥。音域約五個八度，可任意轉調，常出現在大型合奏和獨奏",
           "image": "./assets/images/instruments/plucked/01.png"
         },
-        "2": {
+        {
           "name": "琵琶",
           "description": "琵琶二字原為彈撥樂其中的兩種演奏手法，後來將梨型彈撥樂器稱呼為琵琶。琵琶音域約四個八度，高音區清脆尖銳、中音晚柔婉轉、低音低沉飽滿，表現能力相當豐富。",
           "image": "./assets/images/instruments/plucked/02.png"
         },
-        "3": {
+        {
           "name": "柳琴",
           "description": "外型與琵琶相當類似，但形狀更短小、音箱更園滾。常用於演奏高音區，聲音優美、對比強烈。",
           "image": "./assets/images/instruments/plucked/03.png"
         },
-        "4": {
+        {
           "name": "阮",
           "description": "阮在形制上有分為小阮、中阮、大阮、高音阮和低音阮五種，差別者要為音域的不同。其之中的中阮和大阮最常出現在樂團演奏中有奏中音聲部。",
           "image": "./assets/images/instruments/plucked/04.png"
         },
-        "5": {
+        {
           "name": "月琴",
           "description": "外型與阮相當類似，琴頸較短小。音域約兩個八度，音量較小、音色清脆柔和。多出現於民間歌謠、戲曲說唱伴奏，也為台灣歌仔戲特色樂器。",
           "image": "./assets/images/instruments/plucked/05.png"
         }
-      }
+      ]
     },
     {
       "id": 3,
       "class": "percussion",
       "className": "打擊樂器",
       "description": "中國敲擊樂器歷史悠久，品種繁多，應用廣泛。能夠在管弦樂中加強樂曲的節奏、營造豐富多采的音色變化，更能夠組合起來獨立演奏，而不同類型敲擊樂器合奏亦各具獨特表現力。",
-      "instruments": {
-        "0": {
+      "instruments": [
+        {
           "name": "大鼓",
           "description": "鼓面約在一尺半以上，木製園桶蒙上兩塊箱等地膜。使用木槌敲擊鼓面，聲音渾厚低沉。",
           "image": "./assets/images/instruments/percussion/00.png"
         },
-        "1": {
+        {
           "name": "小鼓",
           "description": "形制和大鼓相同，鼓面約在六、七吋左右。音色較大鼓高、札實，且餘音較短。",
           "image": "./assets/images/instruments/percussion/01.png"
         },
-        "2": {
+        {
           "name": "鑼",
           "description": "鑼身為一圓型弧面，多用銅製結構。鑼身大小有許多規格，演奏時小鑼以單手提起，大鑼至於鑼架上。",
           "image": "./assets/images/instruments/percussion/02.png"
         },
-        "3": {
+        {
           "name": "拔",
           "description": "鈸為兩塊園形同片所組成，也有人稱呼為「鎈」。",
           "image": "./assets/images/instruments/percussion/03.png"
         },
-        "4": {
+        {
           "name": "編鐘",
           "description": "在古代的祭祀儀式中就已經使用，始於青銅器時代。編鐘分上下二段，共十六鐘。編鐘外形橢圓，聲音宏亮，十六隻大小不同，音色也不同。",
           "image": "./assets/images/instruments/percussion/04.png"
         }
-      }
+      ]
     }
   ]
 }
