@@ -23,5 +23,6 @@ $.getJSON(dataUrl, function(_data) {
             vm.instrumentsdata.push(_instrumentsdata);
         })
     })
+    vm.orchestradata=_data.orchestra;
     
 })

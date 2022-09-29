@@ -3,8 +3,9 @@ const vm = new Vue({
     data:{
         data:[],
         instrumentsdata:[],
+        orchestradata:[],
 
-        chapter:1,
+        chapter:2,
         class_num:0,
     },
     methods:{

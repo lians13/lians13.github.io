@@ -118,6 +118,28 @@
                     <div v-if="chapter === 2" class="chapter">
                         <div class="page page-2">
                             <h3>國內樂團</h3>
+                            <p>
+                                1970年代，政府開始提倡藝術文化，在各地建設文化中心，並支持中、西樂發展。
+                                <br>
+                                1979年第一個職業國樂團「台北市立國樂團」正式成立，定期性的演出開始帶動音樂活動。
+                                之後各地國樂團也逐漸壯大，在當年已有近300團國樂團。
+                            </p>
+                            <div class="orchestras">
+                                <div v-for="(item,index) in orchestradata" class="orchestra">
+                                    <div>
+                                        <h4>{{item.name}}</h4>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                    </div>
+                                    <div class="links">
+                                        <a v-bind:href="item.web" target="_blank" v-if="item.web!=''"><img src="./assets/images/links/web.png"></a>
+                                        <a v-bind:href="item.yt" target="_blank" v-if="item.yt!=''"><img src="./assets/images/links/youtube.png"></a>
+                                        <a v-bind:href="item.fb" target="_blank" v-if="item.fb!=''"><img src="./assets/images/links/facebook.png"></a>
+                                        <a v-bind:href="item.ig" target="_blank" v-if="item.ig!=''"><img src="./assets/images/links/instagram.png"></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
