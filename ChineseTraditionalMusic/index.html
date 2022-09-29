@@ -1,18 +1,132 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <!-- vue-2.0.3 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
 
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- Normalize.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Googlefont -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/rwd.css" />
     </head>
-    <body style="background-color: black;">
+    <body>
+        <div class="video-bg">
+            <video autoplay loop muted poster="">
+                <source src="./assets/videos/video.mp4" type="video/mp4">
+                <p>你的瀏覽器不支援 HTML 5 video</p>
+            </video>
+        </div>
+        <div class="wrap" id="app">
+            <nav class="menu side-menu">
+                <div class="logo" v-on:click="intro"></div>
+                <div>
+                    <ul>
+                        <li v-on:click="nav_click(0)" class="pagelist" id="nav-0">關於國樂</li>
+                        <li v-on:click="nav_click(1)" class="pagelist" id="nav-1">國樂樂器</li>
+                        <li v-on:click="nav_click(2)" class="pagelist" id="nav-2">國內樂團</li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="menu top-menu">
+                <div class="bar">
+                    <div class="logo" v-on:click="intro"></div>
+                    <div class="btn" v-on:click.stop="show_list"></div>
+                </div>                
+                <div>
+                    <ul id="slide-down-list">
+                        <li v-on:click="nav_click(0)" id="nav-0">關於國樂</li>
+                        <li v-on:click="nav_click(1)" id="nav-1">國樂樂器</li>
+                        <li v-on:click="nav_click(2)" id="nav-2">國內樂團</li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="title">
+                <h2>國樂藝術</h2>
+                <div v-on:click="nav_click(0)">探索國樂</div>
+            </div>
+            <div class="content">
+                <div class="introduce">
+                    <div class="stuff"></div>
+                    <div v-if="chapter === 0" class="chapter">
+                        <div class="page page-0">
+                            <h3>關於國樂</h3>
+                            <p>
+                                中國傳統民族音樂具有悠久的歷史。
+                                <br>
+                                1910年代，因清末洋化教育興辦，以「西樂」稱洋人傳來之音樂，而產生相對應的「國樂」一詞，用以稱呼傳統民族音樂。
+                                <br>
+                                1911年以後，「國樂」一詞為結合改革過的中國樂器與西洋音樂理論，產生的新的樂種，與傳統中國民族音樂有別。
+                            </p>
+                            <p>
+                                國樂團
+                                <br>
+                                民國初年因中華民國政府提倡，稱為「國樂團」，中國大陸稱為「民樂團」、香港稱為「中樂團」。
+                                <br>
+                                是中國近代以中國民族樂器為基礎的大型樂團型態，編制模仿西洋管弦樂團而成，因此也有人認為應稱呼為「現代中華管弦樂」，與中國傳統合奏區別。
+                            </p>
+                            <p>
+                                現代國樂團的編制，主要分為「吹、拉、彈、打」四組。
+                                <br>
+                                其中在彈撥樂器和中國傳統打擊樂與西樂有明顯區別。
+                                <br>
+                                國樂團通常為60-80人編制的樂團演奏大型合奏曲及協奏曲。
+                                <br>
+                                亦有10-30人的小型編制的絲竹樂團，主要演奏傳統絲竹樂或小型合奏曲。
+                            </p>
+                        </div> 
+                    </div>
+                    <div v-if="chapter === 1" class="chapter">
+                        <div class="page page-1">
+                            <h3>國樂樂器</h3>
+                            
+                            <div class="class">
+                                <div v-for="(item,index) in data" v-on:click="select_class(index)" class="pack" >
+                                    <div class="category" v-bind:class="{'active':index==class_num}">{{item.className}}</div>
+                                </div>
+                            </div>
+
+                            <p v-for="(item,index) in data" v-if="index === class_num">
+                                {{item.description}}
+                            </p>
+                            <p>
+                                下方列舉各類別常見、具代表性的樂器介紹。
+                            </p>
+                            <div class="instruments">
+                                <div v-for="(item,index) in instrumentsdata" v-bind:class="{'i_active': item.class==class_num}" :key="index" class="instrument">
+                                    <div class="img">
+                                        <img v-bind:src="item.image" v-bind:alt="item.name"/>
+                                    </div>
+                                    <div class="mask"></div>
+                                    <div class="text"><p>{{item.name}}</p></div>
+                                    <div class="description"><p>{{item.description}}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="chapter === 2" class="chapter">
+                        <div class="page page-2">
+                            <h3>國內樂團</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     
-    <script type="text/javascript" src="./assets/js/getData.js"></script>
+    <script src="./assets/js/getData.js"></script>
+    <script src="./assets/js/vue.js"></script>
+
     
 </html>

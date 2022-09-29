@@ -1,0 +1,280 @@
+body{
+    background-color: black;
+    font-family: "微軟正黑體",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.wrap{
+    position: relative;
+    width: 100vw;   height: 100vh;
+    display: flex;
+    justify-content: center;    align-items: center;
+}
+
+.video-bg{
+    position: absolute;
+    width: 100vw;   height: 100vh;
+    overflow: hidden;
+}
+.video-bg video{
+    min-width: 100%;    min-height: 100%;
+    user-select: none;
+}
+
+/* main page */
+.side-menu{
+    position: absolute;
+    top: 0; left: 0;
+    width: 200px;   height: 100vh;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(25, 25, 25, 0.8);
+}
+.side-menu .logo{
+    width: 100%;   height: 150px;
+    padding: 0; margin: 0;
+    margin-top: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url();
+    background-color: azure;
+}
+.menu ul{
+    padding: 0; margin: 0;
+    margin-top: 25px;
+    list-style-type: none;
+}
+.menu ul li{
+    width: 100%;    height: 2.5rem;
+    margin: 0.3rem 0;
+    color: aliceblue;
+
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 2.5rem;
+    letter-spacing: 0.75rem;
+    user-select: none;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.menu ul li:hover{
+    color: rgba(25, 25, 25, 0.8);
+    background-color: aliceblue;
+}
+.side-menu ul .active{
+    color: rgba(25, 25, 25, 0.8);
+    background-color: aliceblue;
+}
+
+.top-menu{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 20;
+    display: none;
+    background-color: rgba(25, 25, 25, 0.8);
+}
+.top-menu .bar{
+    width: 100vw;   height: 75px;
+    display: flex;
+    justify-content: space-between;  align-items: center;
+}
+.top-menu .bar .logo{
+    width: 25%;   height: 80%;
+    margin-left: 1rem;
+    background-color: azure;
+}
+.top-menu .bar .btn{
+    width: 50px;   height: 50px;
+    margin-right: 1rem;
+    background-color: azure;
+}
+.top-menu ul{
+    position: fixed;
+    top: 75px; left: 0;
+    width: 100vw;   height: auto;
+    margin: 0;
+    display: none;
+    background-color: rgba(25, 25, 25, 0.8);
+}
+
+.title{
+    width: 100%;   height: 100vh;
+    z-index: 10;
+    padding-left: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    align-items: center;
+}
+.title h2{
+    color: aliceblue;
+    font-size: 4.5rem;
+    letter-spacing: 1.5rem;
+    user-select: none;
+    text-shadow:red 0.1rem 0.1rem 0.2rem;
+}
+.title div{
+    padding: 0.5rem 2rem;
+    color: aliceblue;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: rgb(240, 95, 70);
+    user-select: none;
+    transition: 0.5s;
+}
+.title div:hover{
+    color: rgb(240, 95, 70);
+    border-color: rgb(240, 95, 70);
+    background-color: aliceblue;
+}
+
+.content{
+    position: absolute;
+    width: 100%;   height: 100vh;
+    display: none;
+    z-index: 15;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.introduce{
+    width:100vw;
+    height: auto;   min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite; 
+    
+}
+.stuff{
+    min-width: 200px;
+}
+.chapter{
+    width: auto;    height: auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+.page{
+    width: auto;    max-width: 1450px;
+    height: auto;
+    padding: 2.5rem 5.5rem; 
+}
+.page h3{
+    align-self: start;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+}
+.page p{
+    font-size: 1.25rem;
+    letter-spacing: 0.25rem;
+    line-height: 2.25rem;
+}
+.page h3::selection,.page p::selection,.page br::selection{
+    color: antiquewhite;
+    background-color: black;
+}
+.page-0{
+}
+.page-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.class{
+    width: 100%;    max-width: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+.class .pack{
+    width:25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    align-items: center;
+}
+.class .pack .category{
+    padding: 0.25rem 1rem;    margin: 0.5rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 1000;
+    letter-spacing: 0.25rem;
+    line-height: 2.25rem;
+    white-space:nowrap;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: transparent;
+    user-select: none;
+    transition: 0.25s;
+}
+.class .pack .category:hover,.class .pack .active{
+    color:aliceblue;
+    background-color: black;
+}
+
+.instruments{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.instruments .instrument{
+    position: relative;
+    width: 30%; height: 375px;
+    margin: 5px;
+    display: none;
+    overflow: hidden;
+}
+.instruments .instrument div{
+    position: absolute;
+    width: 100%; height: 100%;
+    transition: 0.5s;
+}
+.instruments .instrument .mask{
+    background-color: rgba(25, 25, 25, 0.25);
+}
+.instruments .instrument .img{
+    display: flex;
+    justify-content: center;    align-items: center;
+    background-color: black;
+}
+.instruments .instrument .img img{
+     max-height: 100%;
+}
+.instruments .instrument .text{
+    display: flex;
+    justify-content: center;    align-items: center;
+}
+.instruments .instrument .text p{
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.25rem;
+    text-shadow:black 0.1rem 0.1rem 0.2rem;
+}
+.instruments .instrument .description{
+    bottom: 0;
+    max-height: 75%;
+    display: flex;
+    justify-content: center;    align-items: center;
+    transform: translateY(100%);
+}
+.instruments .instrument .description p{
+    padding:1rem 2rem;   margin: 0;
+    color: aliceblue;
+    font-size: 1.2rem;
+    letter-spacing: 0.25rem;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+.instruments .instrument:hover .img{
+    transform: scale(1.5);
+}
+.instruments .instrument:hover .mask{
+    background-color: rgba(25, 25, 25, 0.75);
+}
+.instruments .instrument:hover .text{
+    transform: translateY(-20%);
+}
+.instruments .instrument:hover .description{
+    transform: translateY(0);
+}
