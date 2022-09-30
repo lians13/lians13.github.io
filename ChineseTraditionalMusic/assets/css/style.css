@@ -89,7 +89,10 @@ body{
 .top-menu .bar .btn{
     width: 50px;   height: 50px;
     margin-right: 1rem;
-    background-color: azure;
+}
+.top-menu .bar .btn img{
+    max-width: 100%;
+    filter: drop-shadow(0 0 1.5px aliceblue)
 }
 .top-menu ul{
     position: fixed;
