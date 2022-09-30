@@ -4,7 +4,7 @@
 @media screen and (max-width:1024px){
     .page{padding: 2rem 3rem;}
     .class .pack{width:50%;}
-    
+    .instruments .instrument{width:98%}
 }
 @media screen and (max-width:768px){
     .side-menu{display: none;}
@@ -13,6 +13,7 @@
     .stuff{display: none;}
     .chapter{margin-top: 75px;}
     .page{padding: 1rem 1.5rem;}
+    .instruments .instrument{width:46%}
 }
 @media screen and (max-width:576px){
     .instruments .instrument{width:98%}

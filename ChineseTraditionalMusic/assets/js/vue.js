@@ -5,7 +5,7 @@ const vm = new Vue({
         instrumentsdata:[],
         orchestradata:[],
 
-        chapter:2,
+        chapter:0,
         class_num:0,
     },
     methods:{
