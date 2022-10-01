@@ -29,8 +29,10 @@ const vm = new Vue({
         show_list:function(){
             if($('#slide-down-list').css('display')=='block'){
                 $('#slide-down-list').slideUp();
+                $('.menu-btn').removeClass('menu-btn-on');
             }else{
                 $('#slide-down-list').slideDown();
+                $('.menu-btn').addClass('menu-btn-on');
             }
         },
         select_class:function(num){
@@ -51,4 +53,5 @@ const vm = new Vue({
 })
 $(document).click(function(){
     $('#slide-down-list').slideUp();
+    $('.menu-btn').removeClass('menu-btn-on');
 });
