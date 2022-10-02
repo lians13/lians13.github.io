@@ -25,6 +25,8 @@ const vm = new Vue({
             })
             $('.content').fadeIn();
             this.select_class(this.class_num);
+
+            $('.content').animate({scrollTop:0},250)
         },
         show_list:function(){
             if($('#slide-down-list').css('display')=='block'){

@@ -5,7 +5,7 @@ body{
 
 .wrap{
     position: relative;
-    width: 100vw;   height: 100vh;
+    width: 100vw;   height: auto;   min-height: 100vh;
     display: flex;
     justify-content: center;    align-items: center;
 }
@@ -149,7 +149,6 @@ body{
     display: flex;
     justify-content: center;
     background-color: antiquewhite; 
-    
 }
 .stuff{
     min-width: 200px;
@@ -159,7 +158,6 @@ body{
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    overflow-y: auto;
 }
 .page{
     width: auto;    max-width: 1450px;
@@ -291,8 +289,9 @@ body{
 .orchestra{
     position: relative;
     width: 80%; max-width: 600px;
-    padding: 20px 25px 50px 25px;    margin: 50px 5px 25px 5px;
+    padding: 20px 25px 50px 25px;    margin: 20px 5px 60px 5px;
     border: solid 1px black;
+    transition: 0.3s;
 }
 .orchestra h4{
     margin: 2rem 0;
@@ -318,12 +317,16 @@ body{
     background-color: antiquewhite;
     border: solid 1.5px black;
     transform: rotate(45deg);
+    transition: 0.25s;
 }
 .orchestra .links a img{
     max-width:70%;    max-height: 70%;
     transform: rotate(-45deg);
     transition: 0.5s;
 }
+.orchestra .links a:hover{
+    transform: rotate(0deg) scale(1.1);
+}
 .orchestra .links a:hover img{
-    transform: rotate(-45deg) scale(1.1);
+    transform: rotate(0deg) scale(1.1);
 }
