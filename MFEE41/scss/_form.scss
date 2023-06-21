@@ -1,0 +1,131 @@
+input {
+    position: relative;
+    @include font(4)
+}
+
+label {
+    @include font(4)
+}
+
+input[type=text],
+input[type=email] {
+    padding: 0.2em 0.5em;
+    outline: none;
+    border: none;
+
+    &+p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2em 0.5em;
+        transition: 0.15s;
+        pointer-events: none;
+        @include font(4);
+
+        &::after {
+            margin-left: 1em;
+            color: white;
+            font-size: 1.5em;
+        }
+    }
+}
+
+input[type=text].isValue,
+input[type=email].isValue {
+    &+p {
+        top: -3em;
+        font-size: 1em;
+    }
+    &:valid {
+        &+p::after {
+            content: '✓';
+        }
+    }
+
+    &:invalid {
+        &+p::after {
+            content: '✗';
+        }
+    }
+}
+
+
+input[type=checkbox] {
+    &+label {
+        &::before {
+            border-radius: 0%;
+        }
+    }
+}
+
+input[type=radio] {
+    &+label {
+        &::before {
+            border-radius: 100%;
+        }
+    }
+}
+
+input[type=radio],
+input[type=checkbox] {
+    display: none;
+
+    &+label {
+        position: relative;
+        display: inline-block;
+        padding-left: 1.5em;
+        margin: 0 auto;
+        color: $seondryColor2;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            top: 0;
+            left: 0;
+            transform: translate(0%, 50%) scale(0.75);
+
+            border: {
+                style: solid;
+                color: $seondryColor2;
+                width: 2px;
+            }
+
+            background: {
+                color: transparent;
+            }
+
+            transition: transform 0.15s,
+            border-color 0.15s;
+        }
+    }
+
+    &:checked {
+        &+label {
+            &::before {
+
+                // background: {
+                //     color: $complementColor;
+                // }
+                transform: rotateZ(45deg) scale(0.4, 0.8) translate(10px, 5px);
+
+                border : {
+                    width: 0 5px 3px 0;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+    padding: 0.2em 2em;
+    text-align: center;
+    letter-spacing: 0.75em;
+    @include font(5);
+    font-family: 'Cubic_11_1', cursive;
+}

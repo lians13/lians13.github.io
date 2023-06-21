@@ -1,0 +1,67 @@
+@import 'mixin/fontSize';
+@import 'mixin/rwdMedia';
+
+@import 'variable';
+@import 'reset';
+
+// @import 'console';
+
+@font-face {
+    font-family:Cubic_11_1 ;
+    src: url(../font/Cubic_11/fonts/ttf/Cubic_11_1.010_R.ttf);
+}
+:root {
+    font-family: 'Press Start 2P', 'Cubic_11_1' ,cursive;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+h5,h6,p,input{
+    font-family:'Cubic_11_1' ,cursive;
+}
+.you {
+    color: white;
+    filter: drop-shadow(0 0 5px white);
+}
+
+.container {
+    position: relative;
+    background-color: $primaryColor;
+    &:before {
+        // content:"Onceuponatime,inamysticalrealmshroudedinacloakofotherworldlydarkness,thereexistedapeculiarcreatureknownasZephyrion.Legendhaditthatthisenigmaticbeingpossessedthepowertomanipulatetimeitself,controllingtheebbandflowofpast,present,andfuturewithanetherealtouch.WithinthedepthsofZephyrion'slair,arcaneartifactsandancienttomesadornedthewalls,theirmysteriousinscriptionswhisperingforgottensecrets.Theaircrackledwithanelectricenergy,andthescentofincensefilledthechamber,heighteningthesurrealambiance.Astwilightcasteerieshadowsupontheland,Zephyrionemergedfromtheshadows,afigureofbreathtakingstrangeness.Withiridescentwingsthatshimmeredlikemoonlightonwater,itsoaredthroughthenightsky,leavingtrailsofstardustinitswake.Itseyes,glowingliketwinorbsofphosphorescentfire,heldthewisdomofcenturies.LegendsspokeofZephyrion'sabilitytograntwishes,butatacost.Manyafoolhardyadventurerhadsoughtthecreature,drivenbygreedanddesire,onlytosuccumbtothetwistedconsequencesoftheirdesires.ForZephyrion,thelinebetweenblessingandcursewasacapriciousdance,leavingthosewhodaredtotriflewithitspowerforeverchanged.Whisperscirculatedamongthevillagers,talesofbizarrehappeningsandinexplicablephenomena.TheyspokeofayoungmaidenwhohaddaredtoaskZephyrionforeternalbeauty,onlytofindherselftrappedinatimelessexistence,heryouthfulradiancetransformedintoahauntingvisageofunendingyouth.Inthedarkestcornersoftheforest,wheretheveilbetweenrealityandfantasygrowthin,Zephyrion'sinfluencemanifestedinstrangeandwondrousways.Treeswhisperedsecretstooneanother,theirbranchesentwinedinanintricatedance.Shadowsdancedtoanotherworldlymelody,asifunseenhandspluckedinvisiblestrings.WithinthemiststhatshroudedZephyrion'srealm,forgottencreaturesofmythandlegendfoundsolace,theirpresencefleetingandelusive.Griffinsscoredthroughthecelestialheights,theirmightywingspropellingthembeyondthegraspofmortaleyes.Unicornsgallopedthroughfieldsofiridescentflowers,theirpurewhitecoatsradiantinthemoonlight.Butbeware,forZephyrion'sdomainwasarealmofuncertainty,wheredreamsandnightmaresintertwined.Thewhimsofthismysticalbeingwerenottobetrifledwith,forthepriceoffulfillmentcouldbeone'sverysoul.Thus,thelegendsendure,passeddownthroughgenerations,remindingallwhohearthemofthepowerandperilthatlurksinthedepthsoftheextraordinary.IntherealmofZephyrion,theordinaryisleftbehind,andthepeculiarreignssupreme.";
+        content: "InavillageinancienttimespeoplelivedpeacefulandharmoniouslivesuntilanunexpectederrordisruptedeverythingThemoon'sorbitbegantodeviategraduallyapproachingtheEarthandthreateningthelivesandbalanceofthevillagersNightsgrewdarkertideslosttheirrhythmcropswitheredandfearpermeatedtheheartsofthepeopleAmidthecrisisayoungmannamedAlanfueledbycuriosityandcouragebelievedthatrestoringthemoon'scorrectorbitwasthekeytoregainingpeaceinthevillageAccordingtoanancientprophecyAlanlearnedthatfindingtheMoonGuardianheldthesolutionTheMoonGuardianwassaidtopossessmagicalpowerscapableofcontrollingthemoon'smovementsThushetookanadventurousjourneyAlanheardthattheMoonGuardianresidedindistantandmysteriousmountainspromptinghimtoundertakeatreacherousjourneyAlongthewayheencounteredvariouschallengesandtrialscrossingsteeppeakstraversingdangerousforestsconfrontingmalevolentcreaturesandnavigatingperplexingmazesHoweverAlanwasnotaloneDuringhisjourneyhemetawiseandcourageousguidewhojoinedhiminovercomingobstaclesunitedintheirquesttolocatetheMoonGuardianThisexpeditionallowedAlantogrowanddiscoverthedepthsofhisownbraveryandwisdomFinallyAlanandhisguidesuccessfullyfoundtheMoonGuardianTheyexplainedtheseverityofthecrisisandpleadedfortheGuardian'sassistanceinrestoringthemoon'sorbitTheGuardianrevealedthatrectifyingtheerrorrequiredharnessingthecollectivepoweroftheentirevillagethrougharitualandprayertotransmitthecorrectenergytothemoonReturningtothevillageAlanandhisguidesharedtheiradventureandthediscoveryoftheMoonGuardianwiththepeopleThevillagersinspiredbytheirhopeanddeterminationjoinedforcesandpreparedfortheritualAsthemoonroseoncemoretheentirevillagejoinedhandsofferingprayersandtransmittingtheirenergyTheircollectiveprayersandfocusedintentionstraversedthenightskyreachingthemoonWiththeincreasingpoweroftheirprayersthemoongraduallyreturnedtoitscorrectorbitIntheendthemoonwasrestoredtoitsrightfulplaceemanatingitsradianceandsacredpowerNightsregainedtheirserenityandbeautyfillingtheheartsofthevillagerswithjoyandgratitude";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include font(20);
+        text-align: center;
+        word-wrap:break-word;
+        word-spacing: 0.25em;
+        pointer-events: none;
+        overflow: hidden;
+        filter: blur(10px) opacity(25%);
+    }
+}
+
+
+h1,h2,h3,h4,h5,h6,p,label,br,hr,li,img,a,span{
+    @extend %selectContent;
+}
+.info {
+    h1,h2,h3,h4,h5,h6,p,label,br,hr,li,img,a,span{
+        @extend %selectContentBlack;
+    }
+}
+
+@import 'noise';
+@import 'animation/grid';
+@import 'animation/loading';
+@import 'animation/slide';
+
+@import 'form';
+
+@import 'pages/header';
+@import 'pages/main';
+@import 'pages/footer';

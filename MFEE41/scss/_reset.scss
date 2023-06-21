@@ -1,0 +1,79 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    @include font(17)
+}
+
+h2 {
+    @include font(14)
+}
+
+h3 {
+    @include font(11)
+}
+
+h4 {
+    @include font(9)
+}
+
+h5 {
+    @include font(7);
+    font-weight: normal;
+}
+
+h6 {
+    @include font(4);
+    font-weight: normal;
+}
+
+p {
+    @include font(4);
+}
+
+@include pad-width() {
+    h1 {
+        @include font(14)
+    }
+
+    h2 {
+        @include font(12)
+    }
+
+    h3 {
+        @include font(10)
+    }
+
+    h4 {
+        @include font(8)
+    }
+
+    h5 {
+        @include font(6)
+    }
+
+    h6 {
+        @include font(4)
+    }
+
+    p {
+        @include font(3)
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        color: inherit;
+    }
+}

@@ -1,0 +1,462 @@
+main {
+    margin-top: 10px;
+}
+
+.prerequisites {
+    padding-bottom: 25vh;
+
+    >.content {
+        height: 100vh;
+
+        &:nth-of-type(odd) {
+            >div>article {
+                >h4 {
+                    bottom: -2.5rem;
+                    right: -2.5rem;
+
+                    @include pad-width() {
+                        right: 0;
+                    }
+                }
+
+                >.directions {
+                    top: -2.5rem;
+                    left: -5rem;
+                    transform: rotateZ(-5deg);
+
+                    @include pad-width() {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        &:nth-of-type(even) {
+            >div>article {
+                >h4 {
+                    top: -3.5rem;
+                    right: -2.5rem;
+
+                    @include pad-width() {
+                        right: 0;
+                    }
+                }
+
+                >.directions {
+                    bottom: -2.5rem;
+                    left: -5rem;
+                    transform: rotateZ(5deg);
+
+                    @include pad-width() {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        >div {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            >article {
+                position: relative;
+                width: 500px;
+                height: 250px;
+
+                @include pad-width() {
+                    width: 400px;
+                    height: 200px;
+                }
+
+                display: none;
+                transform: scale(1);
+
+                @extend %blurEffect;
+
+                transition: transform 0.1s;
+
+                >h4 {
+                    position: absolute;
+                    color: transparent;
+                    white-space: nowrap;
+                    -webkit-text-stroke: black thin;
+                }
+
+                >.directions {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    padding: 2/32*100% 4/64*100%;
+
+                    background: {
+                        image: url(../img/frame_01.png);
+                        position: center;
+                        size: contain;
+                        repeat: no-repeat;
+                    }
+
+                    >p {
+                        width: 100%;
+                        height: 100%;
+
+                        text-align: justify;
+
+                        overflow: auto;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.info {
+    @extend %flexCenter;
+    flex-wrap: wrap;
+
+    article {
+        position: relative;
+        width: 100%;
+        padding: 100px 0;
+
+        @extend %flexCenter;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        color: $seondryColor2;
+        background-color: black;
+
+        &:first-of-type {
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100vh;
+                top: -100vh;
+                background: linear-gradient(to top, black 20%, transparent 100%);
+            }
+        }
+
+        >h3 {
+            padding-bottom: 1.25em;
+            letter-spacing: 0.3em;
+
+            @include pad-width() {
+                letter-spacing: 0;
+            }
+        }
+
+        >form,
+        >div {
+            width: 90%;
+            max-width: 750px;
+            display: inherit;
+            flex-direction: column;
+
+            padding: 35px 0;
+
+            div {
+                position: relative;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            label {
+                margin-top: 1em;
+            }
+        }
+
+        h6 {
+            position: relative;
+            width: 100%;
+            padding: 1em 0;
+            transition: .5s;
+
+            border: {
+                width: 2px 0 0 0;
+                style: solid;
+                color: $complementColor;
+            }
+
+            &:hover {
+                color: white;
+                @extend %blurEffectLight;
+            }
+        }
+
+        h6.newsTitle {
+            @extend %singleEllipsis;
+
+            &+.newsDate {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+                font-size: 0.75em;
+                text-align: right;
+            }
+        }
+
+        h6.question {
+            padding-right: 1em;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &::after {
+                content: url(../img/downArrow.png);
+                position: absolute;
+                right: 0;
+                transition: 0.5s ease-out;
+            }
+
+            &+p {
+                width: 90%;
+                max-height: 0;
+                margin: 0 auto;
+                opacity: 0;
+                transition: 0.5s ease-out;
+            }
+        }
+
+        h6.question.active {
+            &+p {
+                margin: 1rem auto;
+                max-height: 10em;
+                opacity: 1;
+            }
+
+            &::after {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        input[type=button],
+        input[type=submit],
+        input[type=reset],
+        button {
+            width: 420px;
+            max-width: 95%;
+            margin: 0 auto;
+            transition: 0.25s;
+
+            &:hover {
+                color: white;
+                background-color: $complementColor;
+                filter: drop-shadow(0 0 15px $seondryColor2);
+            }
+        }
+
+        .done {
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    article#chapterInfo {
+        flex-direction: row;
+
+        h2 {
+            padding: 0 0.5em;
+            writing-mode: vertical-rl;
+            letter-spacing: 0.5em;
+            overflow: hidden;
+
+            @include pad-width() {
+                writing-mode: initial;
+                padding: 0 0 1rem 0;
+            }
+        }
+
+        ul {
+            flex-grow: 1;
+            list-style-position: inside;
+            counter-reset: custom-counter;
+        }
+
+        li {
+            position: relative;
+            padding: 2.5em 10% 1.5em 10%;
+
+            @include pad-width() {
+                padding: 2.5em 5% 1.5em 5%;
+            }
+
+            @include font(2);
+
+            counter-increment: custom-counter;
+
+            background-color: black;
+
+            &::marker {
+                content: 'Chapter. 0' counter(custom-counter);
+                @include font(1);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+
+                border: {
+                    width: 0 .75em .75em 0;
+                    style: double;
+                    color: $seondryColor2;
+                }
+
+                pointer-events: none;
+                transition: 0.2s;
+                visibility: hidden;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+
+                border: {
+                    width: .75em 0 0 .75em;
+                    style: double;
+                    color: $seondryColor2;
+                }
+
+                pointer-events: none;
+                transition: 0.2s;
+                visibility: hidden;
+            }
+
+            &:hover,
+            &:focus {
+                animation: {
+                    name: textFlash;
+                    duration: .4s;
+                    iteration-count: infinite;
+                    delay: 0.25s;
+                }
+
+                &::before,
+                &::after {
+                    visibility: visible;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            span {
+                display: inline-block;
+                width: 100%;
+                max-width: 720px;
+                @include font(10);
+                @extend %singleEllipsis;
+            }
+        }
+    }
+
+    article.newsContainer {
+        >div {
+            margin-bottom: 50px;
+            align-items: center;
+
+            #newsContent {
+                position: relative;
+                margin-top: 50px;
+                width: 90%;
+                min-height: 10em;
+                background: {
+                    image: url(../img/egg.png);
+                    position: bottom right;
+                    repeat: no-repeat;
+                };
+                &::after{
+                    content: '營運單位敬上';
+                    position: absolute;
+                    bottom: 0.5em;
+                    right: 80px;
+                    font-size: 0.75em;
+                }
+            }
+
+            #newsDate {
+                width: 90%;
+                text-align: end;
+            }
+
+            .pre {
+                position: relative;
+                width: 75%;
+                margin-bottom: 3em;
+
+                h6 {
+                    border: none;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: -.5em;
+                    font-size: 1.25em;
+                }
+
+                @include pad-width() {
+                    width: 100%
+                }
+            }
+
+            #lastNews {
+                margin-left: -20%;
+                align-self: self-start;
+
+                &::before {
+                    content: '上一條';
+                }
+
+                @include pc-width-S() {
+                    margin-left: 0;
+                }
+            }
+
+            #nextNews {
+                margin-right: -20%;
+                align-self: self-end;
+                text-align: end;
+
+                &::before {
+                    content: '下一條';
+                    right: 0;
+                }
+
+                @include pc-width-S() {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes textFlash {
+
+    49% {
+        color: $seondryColor1;
+        background-color: $seondryColor2;
+    }
+
+    50% {
+        background-color: $complementColor;
+        color: $seondryColor1 !important;
+    }
+}

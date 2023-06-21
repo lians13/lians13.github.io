@@ -1,0 +1,20 @@
+.hide {
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+
+.slideDown {
+    transform: translate(0, 100%);
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+.flipDown{
+    transform: rotate3d(1,0,0,90deg);
+    transition-duration: 0.5s;
+}
+.show {
+    transform: translate(0, 0) rotate3d(1,0,0,0deg);
+    opacity: 1;
+    transition-delay: calc(var(--i) + .3s) 
+}
+

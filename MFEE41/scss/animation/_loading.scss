@@ -1,0 +1,71 @@
+// <div class="loadingAnimation">
+//     <span>L</span>
+//     <span>o</span>
+//     <span>a</span>
+//     <span>d</span>
+//     <span>i</span>
+//     <span>n</span>
+//     <span>g</span>
+//     <span>.</span>
+//     <span>.</span>
+//     <span>.</span>
+// </div>
+$speed : 2.5s;
+
+.loadingAnimation {
+    position: fixed;
+    @extend %fullScreen;
+    @extend %flexCenter;
+
+    background-color: $primaryColor;
+
+    z-index: 9;
+
+    >span {
+        
+        width: 1em;
+        height: 1em;
+        margin: 0 0.25em;
+
+        text-align: center;
+        font-size: 4vw;
+
+        @extend %blurEffect;
+
+        animation: {
+            name: move;
+            timing-function: ease-in-out;
+            duration: $speed;
+            iteration-count: infinite;
+        }
+
+        user-select: none;
+    }
+
+    $max: 10;
+
+    @for $i from 1 through $max {
+        >span:nth-child(#{$i}) {
+            animation-delay: ($speed - $speed/$max*$i )*-1;
+        }
+    }
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-0.5em);
+    }
+
+    20% {
+        transform: translateY(0.1px);
+    }
+
+    30% {
+        transform: translateY(0);
+    }
+}

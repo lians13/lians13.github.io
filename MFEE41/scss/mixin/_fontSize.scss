@@ -1,0 +1,31 @@
+$baseSize: 12px;
+$baseLineSizze: 20px;
+$sizeLevel: 4px;
+$paddingLevel: 1.2;
+
+@function font($level: 1) {
+    @if $level <0 {
+        $levle: 0
+    }
+
+    @return $baseSize +$sizeLevel *round($level);
+}
+
+@function rthythm($size) {
+    @return ceil($size *$paddingLevel / $baseLineSizze) * $baseLineSizze;
+}
+
+@mixin font($level: 1, $lineHeight :auto) {
+    $size : font($level);
+    $line: rthythm($size);
+
+    font-size: $size;
+
+    @if($lineHeight ==auto or $lineHeight<$line) {
+        line-height: $line;
+    }
+
+    @else {
+        line-height: $lineHeight;
+    }
+}

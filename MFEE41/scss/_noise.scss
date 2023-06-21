@@ -1,0 +1,40 @@
+// <div class="noise"></div>
+
+.noise {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    z-index: 999;
+    pointer-events: none;
+
+    background: {
+        image:
+            repeating-linear-gradient(#00000050 0 0.0001%, #ffffff50 0 0.0007%),
+            repeating-conic-gradient(#ad9d05 0 0.0001%, #570048 0 0.00015%),
+            repeating-radial-gradient(#ad9d05 0 0.002%, #570048 0 0.004%);
+        size:
+            200px 200px,
+            250vw 250vw,
+            250vw 250vw;
+        position:
+            0% 0%,
+            20% 20%,
+            20% 20%;
+    }
+
+    opacity: 0.3;
+    mix-blend-mode: hard-light;
+
+    animation: {
+        name: noiseAnimation;
+        duration: 25s;
+        iteration-count: infinite;
+    }
+}
+
+@keyframes noiseAnimation {
+    100% {
+        background-position: 50% 50%
+    }
+}

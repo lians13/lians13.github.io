@@ -1,0 +1,37 @@
+$pc-width-L:1440px;
+$pc-width-M:1200px;
+$pc-width-S:992px;
+$pad-width:768px;
+$phone-width-L:576px;
+$phone-width-S:375px;
+
+@mixin pc-width-L() {
+    @media all and (max-width: $pc-width-L) {
+        @content;
+    }
+}
+@mixin pc-width-M() {
+    @media all and (max-width: $pc-width-M) {
+        @content;
+    }
+}
+@mixin pc-width-S() {
+    @media all and (max-width: $pc-width-S) {
+        @content;
+    }
+}
+@mixin pad-width() {
+    @media all and (max-width: $pad-width) {
+        @content;
+    }
+}
+@mixin phone-width-L() {
+    @media all and (max-width: $phone-width-L) {
+        @content;
+    }
+}
+@mixin phone-width-S() {
+    @media all and (max-width: $phone-width-S) {
+        @content;
+    }
+}

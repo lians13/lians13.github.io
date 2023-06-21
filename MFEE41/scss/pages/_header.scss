@@ -1,0 +1,279 @@
+header {
+    @extend %fullScreen;
+    min-height: 1280px;
+    background: linear-gradient(180deg, black 0%, transparent 50%);
+
+    >nav {
+        position: fixed;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+        padding: 1.5em 0.5em;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        li {
+            padding: 0.5em;
+            user-select: none;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.25s;
+
+            &:link {
+                color: $seondryColor2;
+            }
+
+            &:visited {
+                color: $seondryColor2;
+            }
+
+            &:hover {
+                color: white;
+                @extend %blurEffectLight;
+            }
+
+        }
+
+        >.navButton {
+            width: 100%;
+            display: none;
+            fill: $seondryColor2;
+
+            svg {
+                height: 32px;
+                margin: 0 auto;
+            }
+        }
+
+        @include pad-width() {
+            height: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            padding: 1em 5%;
+            transition: 0.3s;
+
+            ul {
+                display: none;
+                @include font(5)
+            }
+
+            >.navButton {
+                display: flex;
+            }
+        }
+    }
+
+    >nav.active {
+        @include pad-width() {
+            height: 100vh;
+
+            background: {
+                color: rgba(0, 0, 0, 0.8)
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    >banner {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(0deg, black 5%, transparent 45%);
+        pointer-events: none;
+        overflow: hidden;
+
+        >.bgImg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 1em;
+        }
+
+        >.bgImg-a {
+            background: {
+                image: url(../img/header/moon_3.png);
+                size: auto 60%;
+                position: bottom;
+                repeat: no-repeat;
+            }
+
+            transform: translate(0, 0%);
+            transition: 0.5s ease-in;
+
+            animation: {
+                name: moonFlash;
+                duration: 1s;
+                iteration-count: infinite;
+                direction: alternate;
+            }
+
+            @include pad-width() {
+                background: {
+                    size: auto 45%;
+                }
+            }
+        }
+
+        >.bgImg-b {
+            transition: background-size 0.25s ease;
+
+            background: {
+                size: auto 25%;
+                position: bottom;
+                repeat: repeat-X;
+            }
+
+            animation: {
+                name: mountainLight;
+                duration: 10s;
+                iteration-count: infinite;
+                direction: alternate;
+            }
+        }
+
+        >.bgImg-b.b1 {
+            background-image: url(../img/header/mountain_3.png);
+        }
+
+        >.bgImg-b.b2 {
+            background-image: url(../img/header/mountain_2.png);
+        }
+
+        >.bgImg-b.b3 {
+            background-image: url(../img/header/mountain_1.png);
+        }
+
+        >.title {
+            width: 100%;
+            max-width: 1280px;
+            height: 65%;
+            margin: 0 auto;
+            @extend %flexCenter;
+
+            filter: drop-shadow(0 0 15px white);
+
+            transition: color 0.3s;
+
+            svg {
+                width: 100%;
+                path[id^=title] {
+                    &+text {
+                        fill: url(#svgGradient);
+                        @include font(17);
+                        text-shadow: 3px 3px white, -3px -3px #444;
+                    }
+                }
+                path[id^=sub] {
+                    &+text {
+                        @include font(4);
+                        text-shadow: 0.02em 0.02em white, -0.02em -0.02em #444;
+                    }
+                }
+                text {
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        >.title.light {
+            height: 100%;
+            svg {
+                path{
+                    &+text {
+                        fill: white;
+                    }
+                }
+            }
+        }
+
+        >.ppc {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding-bottom: 10vh;
+
+            p {
+                width: 100%;
+                padding-top: 1.5em;
+                transform: scale(1.25);
+                color: white;
+                text-align: center;
+                @include pad-width(){
+                    transform: scale(1);
+                }
+            }
+
+            p#scrollDown {
+                pointer-events: all;
+                letter-spacing: 0.4em;
+                transition: 0.3s;
+                cursor: pointer;
+                animation: flash infinite alternate  ease-in-out .4s -0.4s;
+                filter: drop-shadow(0 0 10px black);
+
+                &:hover {
+                    filter: drop-shadow(0 0 5px white)
+                }
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1em;
+            bottom: 0;
+            background: black;
+        }
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+}
+
+header.Collapsed {
+    height: 0;
+    min-height: 0;
+}
+
+@keyframes moonFlash {
+    from {
+        filter: drop-shadow(0 0 175px $complementColor);
+    }
+
+    to {
+        filter: drop-shadow(0 0 250px $complementColor);
+    }
+}
+
+@keyframes mountainLight {
+    from {
+        filter: drop-shadow(0 0 15px $seondryColor1);
+    }
+
+    to {
+        filter: drop-shadow(0 0 35px $seondryColor1);
+    }
+}
+
+@keyframes flash {
+    to {
+        opacity: 0;
+    }
+}
