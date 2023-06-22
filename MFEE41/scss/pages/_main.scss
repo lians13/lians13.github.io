@@ -63,13 +63,10 @@ main {
 
             >article {
                 position: relative;
-                width: 500px;
-                height: 250px;
-
-                @include pad-width() {
-                    width: 400px;
-                    height: 200px;
-                }
+                width: 80vw;
+                max-width: 500px;
+                height: 40vw;
+                max-height: 250px;
 
                 display: none;
                 transform: scale(1);
@@ -377,12 +374,16 @@ main {
                 margin-top: 50px;
                 width: 90%;
                 min-height: 10em;
+
                 background: {
                     image: url(../img/egg.png);
                     position: bottom right;
                     repeat: no-repeat;
-                };
-                &::after{
+                }
+
+                ;
+
+                &::after {
                     content: '營運單位敬上';
                     position: absolute;
                     bottom: 0.5em;
