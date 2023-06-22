@@ -60,7 +60,7 @@ const observer3 = new IntersectionObserver(entries => {
             $('.bgImg-a').css('opacity', 1)
         }
     });
-}, options);
+});
 $('.info').each(function () {
     observer3.observe(this);
 });
@@ -71,7 +71,8 @@ const observer4 = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             $('banner').css({
-                'transform': function () { return 'translate(0,' + ((window.scrollY + window.innerHeight - $(entry.target).offset().top) * -1) + 'px)' }
+                // 'transform': function () { return 'translate(0,' + ((window.scrollY + window.innerHeight - $(entry.target).offset().top) * -1) + 'px)' }
+                'height': function () { return 'calc(100vh - ' + ((window.scrollY + window.innerHeight - $(entry.target).offset().top)) + 'px)' }
             })
 
             if (entry.intersectionRatio >= 0.5) {
@@ -148,7 +149,7 @@ const observer7 = new IntersectionObserver(entries => {
             $(entry.target).removeClass('show')
         }
     });
-}, options);
+});
 $('[class^=flip]').each(function () {
     observer7.observe(this);
 });

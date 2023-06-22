@@ -76,7 +76,7 @@ function render() {
             `
         $('#lastNews').html(temp)
     } else {
-        $('#lastNews').html('<h6>沒有更新的消息了</h6>')
+        $('#lastNews').html('<h6>沒有更舊的消息了</h6>')
     }
 
     if (dataDate[3] - 1 >= 0) {
@@ -89,7 +89,7 @@ function render() {
             `
         $('#nextNews').html(temp)
     } else {
-        $('#nextNews').html('<h6>沒有更舊的消息了</h6>')
+        $('#nextNews').html('<h6>沒有更新的消息了</h6>')
     }
 }
 
