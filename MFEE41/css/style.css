@@ -176,8 +176,8 @@ h5, h6, p, input {
   word-spacing: 0.25em;
   pointer-events: none;
   overflow: hidden;
-  -webkit-filter: blur(10px) opacity(25%);
-          filter: blur(10px) opacity(25%);
+  -webkit-filter: blur(8px) opacity(25%);
+          filter: blur(8px) opacity(25%);
 }
 
 .noise {
@@ -186,9 +186,9 @@ h5, h6, p, input {
   height: 100vh;
   z-index: 999;
   pointer-events: none;
-  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3137254902) 0 0.0001%, rgba(255, 255, 255, 0.3137254902) 0 0.0007%), repeating-conic-gradient(#ad9d05 0 0.0001%, #570048 0 0.00015%), repeating-radial-gradient(#ad9d05 0 0.002%, #570048 0 0.004%);
-  background-size: 200px 200px, 250vw 250vw, 250vw 250vw;
-  background-position: 0% 0%, 20% 20%, 20% 20%;
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3137254902) 0 0.0001%, rgba(255, 255, 255, 0.3137254902) 0 0.0007%), repeating-conic-gradient(#ad9d05 0 0.0001%, #570048 0 0.00015%);
+  background-size: 200px 200px, 3000px 3000px;
+  background-position: 0% 0%, 20% 20%;
   opacity: 0.3;
   mix-blend-mode: hard-light;
   -webkit-animation-name: noiseAnimation;
@@ -820,8 +820,10 @@ main {
 }
 .prerequisites > .content > div > article {
   position: relative;
-  width: 500px;
-  height: 250px;
+  width: 80vw;
+  max-width: 500px;
+  height: 40vw;
+  max-height: 250px;
   display: none;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -829,12 +831,6 @@ main {
   transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
-}
-@media all and (max-width: 768px) {
-  .prerequisites > .content > div > article {
-    width: 400px;
-    height: 200px;
-  }
 }
 .prerequisites > .content > div > article > h4 {
   position: absolute;
@@ -1236,7 +1232,6 @@ footer > div > div a {
   margin: 0 1.5em;
 }
 footer > div > div svg {
-  width: 100%;
   height: 100%;
   fill: rgb(200, 178, 160);
   -webkit-transition: 0.3s;
