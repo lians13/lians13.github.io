@@ -44,7 +44,7 @@ function getDateValue(_data) {
 
 function backToNewsPage() {
     setTimeout(() => {
-        document.location.href = `${newLink('/#news')}`;
+        document.location.href = `${newLink('./#news')}`;
     }, 150);
 }
 
