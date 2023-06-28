@@ -81,10 +81,10 @@
                                 Odyssey
                             </textPath>
                         </text>
-                        <path d="M 100 450 L 900 450  " id="subtitlePath" stroke="none" fill="none">
+                        <path d="M 50 450 L 950 450  " id="subtitlePath" stroke="none" fill="none">
                         </path>
                         <text>
-                            <textPath href="#subtitlePath" textLength="800">
+                            <textPath href="#subtitlePath" textLength="900">
                                 預言成真，曾經的安穩不復存在。
                             </textPath>
                         </text>
@@ -120,7 +120,7 @@
                 <div class="content">
                     <div>
                         <article>
-                            <h4>迷失的軌道</h4>
+                            <h4>迷失的<span>軌道</span></h4>
                             <div class="directions">
                                 <p>
                                     月亮失去了規律，世界的平衡開始動盪。
@@ -143,14 +143,14 @@
                                     勇氣與智慧卻逐漸被受打擊。
                                 </p>
                             </div>
-                            <h4>守護者之謎</h4>
+                            <h4><span>守護者</span>之謎</h4>
                         </article>
                     </div>
                 </div>
                 <div class="content">
                     <div>
                         <article>
-                            <h4>村莊的奇蹟</h4>
+                            <h4>村莊的<span>奇蹟</span></h4>
                             <div class="directions">
                                 <p>
                                     守護者揭示了一個驚人的事實，
@@ -162,18 +162,14 @@
                         </article>
                     </div>
                 </div>
-                <div>
-
-                </div>
             </section>
             <section class="info">
-
                 <article id="news">
                     <h3 class="slideDown once" style="--i:0s">這些<span class="you">你</span>應該要知道</h3>
                     <div id="newsContainer">
 
                     </div>
-                    <button class="slideDown" id="newsButton" style="--i:0.5s">更多消息</button>
+                    <input type="button" value="更多消息" class="slideDown" id="newsButton" style="--i:0.5s"></input>
                 </article>
                 <article id="chapterInfo">
                     <h2>CHAPTER</h2>
@@ -222,26 +218,57 @@
                     </div>
                 </article>
                 <article id="preInfo">
+
+                    <h3 class="slideDown" style="--i:0s">Twitter</h3>
+                    <div class="hide" style="--i:0.2s">
+                        <a class="twitter-timeline" data-height="450" data-theme="dark"
+                            href="https://twitter.com/TwitterDev">Tweets by
+                            Twitter Dev</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </article>
+                <article>
+                    <h3 class="slideDown" style="--i:0s">Youtube</h3>
+                    <div class="hide xSlider">
+                        <div class="videoContainer last ">
+                            <div id="player1"></div>
+                        </div>
+                        <div class="videoContainer pre last">
+                            <div id="player2"></div>
+                        </div>
+                        <div class="videoContainer active">
+                            <div id="player3"></div>
+                        </div>
+                        <div class="videoContainer pre next">
+                            <div id="player4"></div>
+                        </div>
+                        <div class="videoContainer next">
+                            <div id="player5"></div>
+                        </div>
+                        <script async src="https://www.youtube.com/iframe_api"></script>
+                    </div>
+                </article>
+                <article>
                     <h3 class="slideDown" style="--i:0s">追蹤最新進度</h3>
-                    <form action="">
+                    <form action="" id="form">
 
                         <div>
                             <div class="slideDown" style="--i:0.2s">
-                                <input type="email" value="" required>
+                                <input type="email" name="email" value="" required>
                                 <p>輸入接收訊息Email</p>
                             </div>
                         </div>
 
                         <input type="checkbox" name="assent" id="assentCheck1" required>
-                        <label for="assentCheck1" class="slideDown" style="--i:.5s">同意接收事前消息</label>
+                        <label for="assentCheck1" class="slideDown" style="--i:.3s">同意接收事前消息</label>
                         <input type="checkbox" name="assent" id="assentCheck2" required>
-                        <label for="assentCheck2" class="slideDown" style="--i:.5s">同意接受問卷調查</label>
+                        <label for="assentCheck2" class="slideDown" style="--i:.3s">同意接受問卷調查</label>
                         <input type="checkbox" name="assent" id="assentCheck3" required>
-                        <label for="assentCheck3" class="slideDown" style="--i:.5s">同意使用服務協議</label>
+                        <label for="assentCheck3" class="slideDown" style="--i:.3s">同意使用服務協議</label>
 
                     </form>
                     <div class="slideDown" style="--i:0.5s">
-                        <input type="button" value="送出">
+                        <input id="sent" type="button" value="送出">
                     </div>
                 </article>
             </section>
@@ -301,7 +328,7 @@
     <script src="./js/main.js"></script>
     <!-- <script src="./js/gridTransition.js"></script> -->
     <script src="./js/intersectionObserver.js"></script>
+    <script async src="./js/youtubeApi.js"></script>
 
 </body>
-
 </html>

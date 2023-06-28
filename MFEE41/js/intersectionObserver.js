@@ -6,15 +6,14 @@ const observer1 = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             if (entry.intersectionRatio > 0.5) {
-                $('.bgImg-a').removeAttr('style');
+                $('.bgImg-a').removeAttr('style')
                 $('.ppc').fadeIn()
-                $('nav.hidden').removeAttr('style');
-            }else{
+                $('nav.hidden').removeAttr('style')
+            } else {
                 $('.ppc').fadeOut()
-                $('nav.hidden').css('visibility','visible');
             }
         } else {
-            
+
         }
     });
 }, options);
@@ -27,7 +26,7 @@ $('header').each(function () {
 const observer2 = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            $('.title').fadeOut();
+
             $('.bgImg-a').css({
                 'background-size': 'auto 45%',
                 'transform': 'translate(0%,-85%)'
@@ -39,10 +38,13 @@ const observer2 = new IntersectionObserver(entries => {
                 $(this).css({
                     'background-size': function () { return 'auto ' + b + '%' },
                 })
+            })
 
-            });
+
+            $('.title').fadeOut()
+            $('nav.hidden').css('visibility', 'visible')
         } else {
-            $('.title').fadeIn();
+            $('.title').fadeIn()
         }
     });
 }, options);
@@ -71,13 +73,12 @@ const observer4 = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             $('banner').css({
-                // 'transform': function () { return 'translate(0,' + ((window.scrollY + window.innerHeight - $(entry.target).offset().top) * -1) + 'px)' }
                 'height': function () { return 'calc(100vh - ' + ((window.scrollY + window.innerHeight - $(entry.target).offset().top)) + 'px)' }
             })
 
             if (entry.intersectionRatio >= 0.5) {
                 $('.bgImg-a,.title').removeAttr('style')
-                $('.bgImg-a').removeClass('hidden')
+                $('.bgImg-a.hidden').css('visibility','visible')
                 $('.title').addClass('light');
 
             } else {
@@ -86,6 +87,7 @@ const observer4 = new IntersectionObserver(entries => {
         } else {
             $('banner').removeAttr('style');
             $('.title').removeClass('light');
+            $('.bgImg-a.hidden').removeAttr('style');
         }
     });
 }, options);

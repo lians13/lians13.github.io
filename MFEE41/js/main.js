@@ -30,15 +30,13 @@ $('a').click(function (e) {
         if ($(href).length > 0) {
             if (!scrollAni) {
                 scrollAni = true
-                // e.preventDefault();
+                e.preventDefault();
                 pos = $(href).offset().top;
                 $("html,body").animate({ scrollTop: pos }, 1250, () => scrollAni = false);
             }
         }
     }
-
-
-});
+})
 
 
 // click functions 
@@ -63,8 +61,6 @@ $('#scrollDown').click(function (e) {
     $("html,body").animate({ scrollTop: pos }, 1250, () => scrollAni = false);
 })
 
-
-
 $('input[type="text"], input[type="email"]').on('focus', function () {
     $(this).addClass('isValue')
 })
@@ -76,11 +72,10 @@ $('input[type="text"], input[type="email"]').on('focusout', function () {
     }
 })
 
-
-
 // ajax news
 var data;
-const dataUrl = `./json/data.json`;
+// const dataUrl = `./json/data.json`;
+const dataUrl = `https://lians13.github.io/MFEE41/json/data.json`;
 
 function getNewsDate() {
     $.getJSON(dataUrl, function (_data) {
@@ -129,6 +124,45 @@ function addNewNews(count = 2) {
 
     if (newsCount > data.length) {
         $('#newsButton').addClass('done')
-        $('#newsButton').text('已到底了')
+        $('#newsButton').val('已經到底了')
     }
 }
+
+$('.videoContainer').click(function (e) {
+    $('.videoContainer').removeClass('active pre next last')
+
+    $(this).addClass('active')
+    $(this).prev().addClass('pre')
+    $(this).next().addClass('pre')
+    $(this).prevAll().addClass('last')
+    $(this).nextAll().addClass('next')
+});
+
+$('#sent').click(function (e) {
+    inputValue = []
+    $.each($('form#form input'), function () {
+
+
+        if (!this.validity.valid) {
+            inputValue.push(false)
+        } else {
+            inputValue.push($(this).val())
+        }
+    })
+    if (inputValue.findIndex(item => item === false) >= 0) {
+        alert('請正確填寫資料')
+    } else {
+        temp = `已成功登記\n使用者 : ${inputValue[0]}\n`
+        if (inputValue[1] == 'on') {
+            temp += `同意接收事前消息\n`
+        }
+        if (inputValue[2] == 'on') {
+            temp += `同意接受問卷調查\n`
+        }
+        if (inputValue[3] == 'on') {
+            temp += `同意使用服務協議\n`
+        }
+        alert(temp)
+    }
+
+})

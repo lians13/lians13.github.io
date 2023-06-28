@@ -1,10 +1,5 @@
 input {
     position: relative;
-    @include font(4)
-}
-
-label {
-    @include font(4)
 }
 
 input[type=text],
@@ -126,6 +121,6 @@ button {
     padding: 0.2em 2em;
     text-align: center;
     letter-spacing: 0.75em;
-    @include font(5);
-    font-family: 'Cubic_11_1', cursive;
+    appearance: button;
+    cursor: pointer;
 }

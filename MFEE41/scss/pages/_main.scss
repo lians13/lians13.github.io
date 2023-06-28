@@ -1,9 +1,10 @@
 main {
-    margin-top: 10px;
+    // margin-top: 50px;
 }
 
 .prerequisites {
-    padding-bottom: 25vh;
+    position: relative;
+    padding-bottom: 50vh;
 
     >.content {
         height: 100vh;
@@ -11,18 +12,20 @@ main {
         &:nth-of-type(odd) {
             >div>article {
                 >h4 {
-                    bottom: -2.5rem;
-                    right: -2.5rem;
+                    bottom: -.5em;
+                    right: -1em;
+                    transform: rotateY(-35deg) translateZ(150px) rotateX(25deg);
 
                     @include pad-width() {
                         right: 0;
+                        bottom: -1em;
                     }
                 }
 
                 >.directions {
-                    top: -2.5rem;
-                    left: -5rem;
-                    transform: rotateZ(-5deg);
+                    top: -1.5em;
+                    left: -2em;
+                    transform: rotateZ(-5deg) rotateY(25deg);
 
                     @include pad-width() {
                         left: 0;
@@ -34,8 +37,9 @@ main {
         &:nth-of-type(even) {
             >div>article {
                 >h4 {
-                    top: -3.5rem;
-                    right: -2.5rem;
+                    top: -.5em;
+                    right: -1em;
+                    transform: rotateY(-35deg) translateZ(150px);
 
                     @include pad-width() {
                         right: 0;
@@ -43,9 +47,9 @@ main {
                 }
 
                 >.directions {
-                    bottom: -2.5rem;
-                    left: -5rem;
-                    transform: rotateZ(5deg);
+                    bottom: -2em;
+                    left: -2em;
+                    transform: rotateZ(-5deg) rotateY(25deg);
 
                     @include pad-width() {
                         left: 0;
@@ -64,22 +68,33 @@ main {
             >article {
                 position: relative;
                 width: 80vw;
-                max-width: 500px;
+                max-width: 450px;
                 height: 40vw;
-                max-height: 250px;
+                max-height: 225px;
 
                 display: none;
-                transform: scale(1);
 
                 @extend %blurEffect;
 
                 transition: transform 0.1s;
+                perspective: 700px;
 
                 >h4 {
                     position: absolute;
                     color: transparent;
                     white-space: nowrap;
                     -webkit-text-stroke: black thin;
+
+                    span {
+                        display: inline-block;
+                        font-size: inherit;
+
+                        animation: {
+                            name: skew;
+                            duration: 5s;
+                            iteration-count: infinite;
+                        }
+                    }
                 }
 
                 >.directions {
@@ -112,6 +127,15 @@ main {
             }
         }
     }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        bottom: 0;
+        background: linear-gradient(to top, black 20%, transparent 100%);
+    }
 }
 
 .info {
@@ -130,20 +154,10 @@ main {
         color: $seondryColor2;
         background-color: black;
 
-        &:first-of-type {
-            &:before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100vh;
-                top: -100vh;
-                background: linear-gradient(to top, black 20%, transparent 100%);
-            }
-        }
-
-        >h3 {
-            padding-bottom: 1.25em;
-            letter-spacing: 0.3em;
+        h3,
+        h4 {
+            padding-bottom: 1em;
+            letter-spacing: 0.25em;
 
             @include pad-width() {
                 letter-spacing: 0;
@@ -153,7 +167,7 @@ main {
         >form,
         >div {
             width: 90%;
-            max-width: 750px;
+            max-width: $pad-width;
             display: inherit;
             flex-direction: column;
 
@@ -172,10 +186,17 @@ main {
             }
         }
 
+        a {
+            &:hover {
+                color: white;
+                @extend %blurEffectLight;
+            }
+        }
+
         h6 {
             position: relative;
             width: 100%;
-            padding: 1em 0;
+            padding: .75em 0;
             transition: .5s;
 
             border: {
@@ -183,21 +204,16 @@ main {
                 style: solid;
                 color: $complementColor;
             }
-
-            &:hover {
-                color: white;
-                @extend %blurEffectLight;
-            }
         }
 
         h6.newsTitle {
             @extend %singleEllipsis;
 
             &+.newsDate {
-                display: block;
+                display: inline-block;
                 width: 100%;
-                margin-bottom: 1rem;
-                font-size: 0.75em;
+                font-size: 0.5em;
+                margin-bottom: 1em;
                 text-align: right;
             }
         }
@@ -207,12 +223,23 @@ main {
 
             &:hover {
                 cursor: pointer;
+                color: white;
+                @extend %blurEffectLight;
             }
 
             &::after {
-                content: url(../img/downArrow.png);
+                // content: url(../img/downArrow.png);
+                content: "";
                 position: absolute;
                 right: 0;
+                height: .75em;
+                width: .75em;
+
+                background: {
+                    image: url(../img/downArrow.png);
+                    size: cover;
+                }
+
                 transition: 0.5s ease-out;
             }
 
@@ -233,7 +260,7 @@ main {
             }
 
             &::after {
-                transform: rotateX(-180deg);
+                transform: rotateX(180deg);
             }
         }
 
@@ -249,7 +276,7 @@ main {
             &:hover {
                 color: white;
                 background-color: $complementColor;
-                filter: drop-shadow(0 0 15px $seondryColor2);
+                // filter: drop-shadow(0 0 15px $seondryColor2);
             }
         }
 
@@ -287,8 +314,6 @@ main {
             @include pad-width() {
                 padding: 2.5em 5% 1.5em 5%;
             }
-
-            @include font(2);
 
             counter-increment: custom-counter;
 
@@ -358,7 +383,7 @@ main {
                 display: inline-block;
                 width: 100%;
                 max-width: 720px;
-                @include font(10);
+                @include font(11);
                 @extend %singleEllipsis;
             }
         }
@@ -400,7 +425,6 @@ main {
             .pre {
                 position: relative;
                 width: 75%;
-                margin-bottom: 3em;
 
                 h6 {
                     border: none;
@@ -459,5 +483,79 @@ main {
     50% {
         background-color: $complementColor;
         color: $seondryColor1 !important;
+    }
+}
+
+@keyframes skew {
+
+    .5%,
+    1.5%,
+    2.5%,
+    3.5%,
+    4.5% {
+        transform: skewX(180eg);
+        color: black;
+    }
+
+    0%,
+    1%,
+    2%,
+    3%,
+    4% {
+        transform: skewX(-180deg);
+        color: white;
+        -webkit-text-stroke: transparent thin;
+
+    }
+
+    5% {
+        transform: none;
+        color: inherit;
+        -webkit-text-stroke: inherit;
+    }
+}
+
+.xSlider {
+    position: relative;
+    perspective: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .videoContainer {
+        position: absolute;
+        width: 75%;
+        display: none;
+        transition: 0.3s;
+        pointer-events: none;
+
+        iframe {
+            pointer-events: none;
+            max-width: 100%;
+        }
+    }
+
+    .active {
+        position: relative;
+        display: block;
+        transform: none;
+        pointer-events: all;
+        iframe {
+            pointer-events: all;
+        }
+    }
+
+    .next {
+        transform: translateZ(-250px) translateX(75%);
+    }
+
+    .last {
+        transform: translateZ(-250px) translateX(-75%);
+    }
+
+    .pre {
+        display: block;
+        pointer-events: all;
+        z-index: -1;
     }
 }
