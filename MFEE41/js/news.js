@@ -49,18 +49,18 @@ function backToNewsPage() {
 }
 
 function getNewsContent() {
-    isContent = true
+isContent = false
     $.each(data, function (index, element) {
         if (element.date == dataDate[1] && element.time == dataDate[2]) {
             dataDate.push(index);
             render()
-            isContent = false;
+            isContent = true;
             return false
         } else {
 
         }
     })
-    if (isContent) { backToNewsPage(); }
+    if (!isContent) { backToNewsPage(); }
 }
 function render() {
     _r = data[dataDate[3]]
