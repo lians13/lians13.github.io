@@ -20,7 +20,7 @@ function getPageData() {
         }
 
     } else {
-        // backToNewsPage();
+        backToNewsPage();
     }
 }
 
@@ -44,7 +44,7 @@ function getDateValue(_data) {
 
 function backToNewsPage() {
     setTimeout(() => {
-        document.location.href = `${newLink('./#news')}`;
+        document.location.href = './#news';
     }, 150);
 }
 
@@ -55,7 +55,7 @@ function getNewsContent() {
             render()
             return false
         } else {
-
+            backToNewsPage()
         }
     })
 }
