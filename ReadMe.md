@@ -4,6 +4,11 @@ https://lians13.github.io/crash/
 
 由大學作業延伸作品，內容皆屬虛構，並無該遊戲本題
 
+# MFEE41 - Moonbound Odyssey
+
+https://lians13.github.io/MFEE41/
+前端工程師班，靜態網頁作品
+
 # ChineseTraditionalMusic
 
 https://lians13.github.io/ChineseTraditionalMusic/
